@@ -1,34 +1,65 @@
 .container {
-    background: lightblue;
-    cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39,
-      auto;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    justify-content: center;
-  }
-  .deck {
-    position: absolute;
-    width: 300px;
-    height: 200px;
-    will-change: transform;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    touch-action: none;
-  }
-  
-  .deck > div {
-    background-color: white;
-    background-size: auto 85%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    width: 45vh;
-    max-width: 150px;
-    height: 85vh;
-    max-height: 285px;
-    will-change: transform;
-    border-radius: 10px;
-    box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
-  }
-  
+  background: lightblue;
+  cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39, auto;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
+.deck {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action:none;
+}
+
+
+.deck > div {
+  background-color: white;
+  background-size:auto 80%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  width: 45vh;
+  max-width: 150px;
+  height: 85vh;
+  max-height: 285px;
+  will-change: transform;
+  border-radius: 10px;
+  box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+
+.profileContent {
+height: 187px;
+flex-shrink: 0;
+align-self: stretch;
+border-radius: 25px;
+background: rgba(255, 120, 62, 0.868);
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.bio, .hobby {
+  margin: 5px 0;
+
+}
+
+.bio {
+  font-size: 1rem;
+  font-family: 'Arial, sans-serif';
+}
+
+.hobby {
+  font-size: 0.9rem;
+  font-family: 'Courier New, monospace';
+  color: #333;
+}
