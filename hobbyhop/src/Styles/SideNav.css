@@ -18,7 +18,8 @@
     padding-left: 10px;
 }
 
-.container a:link {
+.container a:link,
+a:visited {
     text-decoration: none;
     color: black;
 }
@@ -37,10 +38,16 @@
 
 .accordion-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     height: auto;
 }
 
 .accordion-content {
     display: none;
+}
+
+.accordion-item:hover .accordion-content {
+    display: block;
 }
