@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSprings, animated, to as interpolate } from '@react-spring/web';
 import { useDrag } from '@use-gesture/react';
 
-import styles from '/Users/Frank/Documents/GitHub/hobby-hop/hobbyhop/styles.module.css'; // Ensure this path is correct
+// import styles from '/Users/Frank/Documents/GitHub/hobby-hop/hobbyhop/styles.module.css'; // Ensure this path is correct
 
 const profiles = [
   {
@@ -100,10 +100,10 @@ function Deck() {
   );
 }
 
-export default function App() {
-  return (
-    <div className={styles.container}>
-      <Deck />
-    </div>
-  );
-}
+// export default function App() {
+//  return (
+//    <div className={styles.container}>
+//      <Deck />
+//    </div>
+//  );
+// }
