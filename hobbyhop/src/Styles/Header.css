@@ -7,8 +7,8 @@ header {
     padding-left: 100px;
     padding-top: 20px;
     padding-bottom: 25px;
-    background-color: #F9F1F1;
-    border-bottom: 2px solid #FF773E;
+    background-color: lightgray;
+    border-bottom: 2px solid gray;
 }
 
 nav {
@@ -20,12 +20,4 @@ nav {
 .logo {
     font-weight: bold;
     font-size: 1.8rem;
-}
-
-#span-blue {
-    color: #FF773E;
-}
-
-#span-orange {
-    color: #00CDCD;
 }

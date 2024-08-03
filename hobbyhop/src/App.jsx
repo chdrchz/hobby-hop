@@ -1,5 +1,6 @@
 import './App.css';
 import { useEffect } from 'react';
+import Header from './Components/Header';
 // import { db } from './firebase/firebase-config';
 // import { getDocs, collection } from 'firebase/firestore';
 
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
     </div>
   );
 }
