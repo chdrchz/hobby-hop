@@ -7,7 +7,7 @@
     gap: 10px;
     padding: 25px;
     background-color: lightgray;
-    border-right:
+    border-right: 2px solid gray;
 }
 
 .container {
@@ -50,4 +50,9 @@ a:visited {
 
 .accordion-item:hover .accordion-content {
     display: block;
+}
+
+.content-links {
+    display: flex;
+    flex-direction: column;
 }
