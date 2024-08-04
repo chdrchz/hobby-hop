@@ -5,4 +5,5 @@ button {
     border-style: none;
     font-size: 1.125rem;
     font-weight: 600;
+    cursor: pointer;
 }
