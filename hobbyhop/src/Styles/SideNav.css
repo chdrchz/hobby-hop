@@ -44,6 +44,11 @@ a:visited {
     height: auto;
 }
 
+.accordian-header {
+    display: flex;
+    flex-direction: row;
+}
+
 .accordion-content {
     display: none;
 }
