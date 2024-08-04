@@ -29,8 +29,12 @@ function App() {
     <div className="App">
       <Header />
       <div className="Home">
-        <SideNav />
-        <UserProfile />
+        <div className="sideNav">
+          <SideNav />
+        </div>
+        <div className="userProfile">
+          <UserProfile />
+        </div>
       </div>
     </div>
   );
