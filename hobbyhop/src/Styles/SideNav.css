@@ -2,7 +2,7 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    height: 80vh;
+    height: 94%;
     width: 300px;
     padding: 25px;
     background-color: lightgray;
@@ -81,9 +81,13 @@ a:visited {
 }
 
 .menu {
-    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
     cursor: pointer;
     background-color: lightgray;
-    height: 80vh;
+    height: 96.5%;
     border-right: 2px solid gray;
+    align-items: center;
 }
