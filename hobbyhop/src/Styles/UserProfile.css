@@ -1,12 +1,102 @@
 .profile-container {
     display: flex;
-    flex: 1;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    background-color: #FFFFFF;
+    gap: 50px;
+    height: auto;
+    padding: 50px;
+    border-radius: 50px;
 }
 
-.profile-image {
+.profile-image img {
+    border-radius: 50%;
+    border: 2px solid darkgray;
+}
+
+.profile-bio {
     display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 50px;
+}
+
+.name-and-pronouns {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 15px;
+    height: auto;
+}
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+}
+
+.interests {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.interest-heading {
+    text-align: left;
+}
+
+.interest-list {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.interest-tag {
+    display: flex;
+    background-color: lightgray;
+    height: 50px;
+    width: auto;
+    list-style: none;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 25px;
+}
+
+.interest-add {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.description-paragraph {
+    background-color: lightgray;
+    padding: 25px;
+    border-radius: 25px;
+}
+
+.profile-heading {
+    padding-left: 10px;
+}
+
+.interest-add svg {
+    cursor: pointer;
+}
+
+.wrapper {
+    background-color: black;
+    padding: 25px;
+}
+
+.profile-description {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
