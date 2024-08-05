@@ -73,7 +73,7 @@
 .description {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px;
 }
 
 .description-paragraph {
@@ -88,4 +88,15 @@
 
 .interest-add svg {
     cursor: pointer;
+}
+
+.wrapper {
+    background-color: black;
+    padding: 25px;
+}
+
+.profile-description {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
