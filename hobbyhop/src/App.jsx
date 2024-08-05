@@ -2,6 +2,7 @@ import './App.css';
 import { useEffect } from 'react';
 import Header from './Components/Header';
 import SideNav from './Components/SideNav';
+import UserProfile from './Components/UserProfile';
 // import { db } from './firebase/firebase-config';
 // import { getDocs, collection } from 'firebase/firestore';
 
@@ -27,7 +28,14 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <SideNav />
+      <div className="Home">
+        <div className="sideNav">
+          <SideNav />
+        </div>
+        <div className="userProfile">
+          <UserProfile />
+        </div>
+      </div>
     </div>
   );
 }

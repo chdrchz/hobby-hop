@@ -1,12 +1,14 @@
 body {
   display: flex;
   flex-direction: column;
+  margin: 0;
+  height: 100vh;
 }
 
 .App {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
 }
 
 h1,
@@ -17,4 +19,23 @@ h5,
 p {
   padding: 0;
   margin: 0;
+}
+
+.Home {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  justify-content: center;
+}
+
+.sideNav {
+  width: auto;
+  height: 100%;
+}
+
+.userProfile {
+  flex: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
