@@ -29,6 +29,7 @@ li {
   flex: 1;
   height: auto;
   background-color: #808080;
+  overflow: hidden;
 }
 
 .sideNav {
