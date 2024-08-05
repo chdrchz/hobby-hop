@@ -6,15 +6,9 @@ header {
     padding-right: 100px;
     padding-left: 100px;
     padding-top: 20px;
-    padding-bottom: 25px;
+    padding-bottom: 20px;
     background-color: lightgray;
     border-bottom: 2px solid gray;
-}
-
-nav {
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
 }
 
 .logo {
