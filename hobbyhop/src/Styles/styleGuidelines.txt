@@ -1,0 +1,6 @@
+Let's put some CSS rules here for basic reference so the flow matches!!!
+
+padding: 25px // for big element
+padding: 10px, 15px // in between elements in smaller items
+border: 1px solid
+font weight: 500 // for headings

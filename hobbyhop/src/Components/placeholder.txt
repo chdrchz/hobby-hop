@@ -1,3 +1,0 @@
-You can remove this, I just wanted to push the file structure. 
-
-This folder will contain all of our pre-built components, along with their styles. Excluding app.
