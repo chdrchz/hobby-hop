@@ -1,11 +1,13 @@
 import React from "react";
-import Button from "../Components/Button";
+import Header from "../Components/Header";
 import Hero from "../Components/Hero";
 
 const Landing = () => {
     
-    <div> <Hero />
-        <Button color="#43c5e9" className="special-button">Special Button</Button>
+    <div> 
+        <Header />,
+        <Hero />
+
 
     </div>
 
