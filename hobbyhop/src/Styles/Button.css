@@ -1,0 +1,27 @@
+.custom-button {
+    width: auto;
+    height: 50px;
+    border-radius: 25px;
+    border-style: none;
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding-right: 25px;
+    padding-left: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .custom-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .custom-button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Specific styles for a particular child */
+  .special-button {
+    background: linear-gradient(45deg, #34c0eb, #29a8ff); /* Specific gradient */
+    color: #000; /* Different text color */
+  }
+  
