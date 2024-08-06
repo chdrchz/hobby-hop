@@ -1,23 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Button from "./Button"
+// Routes.jsx
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Landing from '../Pages/Landing';
+import Feed from '../Pages/Feed';
+import BunnyBuddies from '../Pages/BunnyBuddies';
+import Explore from '../Pages/Explore';
 
-const Navigation = () => {
+const AppRoutes = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Landing</Link>
-        
-          <Button color="#43c5e9" className="special-button">landing</Button>
-        </li>
-        <li>
-          <Link to="/new">Feed</Link>
-        </li>
-        {/* Add more links as needed */}
-      </ul>
-    </nav>
+    <Routes>
+      <Route path="/landing" element={<Landing />} />
+      <Route path="/feed" element={<Feed />} />
+      <Route path="/bunnybuddies" element={<BunnyBuddies />} />
+      <Route path="/explore" element={<Explore />} />
+    </Routes>
   );
 };
 
-export default Navigation;
+export default AppRoutes;
