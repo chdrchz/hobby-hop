@@ -1,0 +1,93 @@
+.sidenav-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 94%;
+    width: 300px;
+    padding: 25px;
+    background-color: lightgray;
+    border-right: 2px solid gray;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+
+.container a:link,
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.content-links a:link,
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.content-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 25px;
+}
+
+.border {
+    border: 1px solid gray;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-top: 20px;
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.accordion-header h3 {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.accordion-content {
+    display: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.accordion-item:hover .accordion-content {
+    display: block;
+}
+
+.nav-exit {
+    display: flex;
+    justify-content: end;
+    padding-right: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 15px;
+    cursor: pointer;
+    background-color: lightgray;
+    height: 96.5%;
+    border-right: 2px solid gray;
+    align-items: center;
+}
