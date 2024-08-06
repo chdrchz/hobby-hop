@@ -1,6 +1,16 @@
 import React from "react";
+import Header from "../Components/Header";
+import Hero from "../Components/Hero";
 
-function Landing() {
+const Landing = () => {
+    
+    <div> 
+        <Header />,
+        <Hero />
+
+
+    </div>
+
     return
 }
 
