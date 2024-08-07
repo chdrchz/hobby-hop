@@ -7,16 +7,16 @@ function CreateAccount() {
         <div className="form-container">
             <h1>Hobby Hop</h1>
             <form action="/submit" method="post">
-                <label for="full-name"></label>
+                <label htmlFor="full-name"></label>
                 <input type="text" id="fullname" placeholder="Full Name" name="fullname" required />
                 
-                <label for="email"></label>
+                <label htmlFor="email"></label>
                 <input type="email" id="email" placeholder="Email" name="email" required />
                 
-                <label for="password"></label>
+                <label htmlFor="password"></label>
                 <input type="password" id="password" placeholder="Password" name="password" required />
                 
-                <label for="confirm-password"></label>
+                <label htmlFor="confirm-password"></label>
                 <input type="password" id="confirm-password" placeholder="Confirm Password" name="confirm-password" required />
                 <div className="submit">
                     <Button color="gray" label="Create Account">Create Account</Button>

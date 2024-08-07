@@ -1,8 +1,23 @@
-import React from "react";
+import React from 'react';
+
 import "../Styles/Hero.css";
 import Button from "./Button";
+import CustomModal from "./CustomModal";
+import CreateAccount from './CreateAccount';
 
 const Hero = () => {
+
+  // set state for opening and closing the modal
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true); // true is open
+  }
+
+  function closeModal() {
+    setIsOpen(false); // false is close
+  }
+
   return (
     <div className="hero">
       <div className="frame">
@@ -17,10 +32,17 @@ const Hero = () => {
         <div className="text-wrapper-2">with</div>
         <div className="friends-family-wrapper">
           <p className="friends-family">
-            friends, family, roommates, strangers,&nbsp;&nbsp;(this could be a carousel that rotates)
+            friends, family, roommates, strangers,(this could be a carousel that rotates)
           </p>
         </div>
-        <Button id="create-account" color="gray">Create Account</Button>
+        <Button onClick={openModal} id="create-account" color="gray">Create Account</Button>
+        <CustomModal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          contentLabel="Create Account Modal"
+        >
+          <CreateAccount />
+        </CustomModal>
       </div>
     </div>
   );

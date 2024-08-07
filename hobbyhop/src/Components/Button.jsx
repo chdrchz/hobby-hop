@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Button({ color, label, children }) {
+function Button({ onClick, color, label, children }) {
     const [isHovered, setIsHovered] = useState(false);
 
     // Inline styles for the button
@@ -18,6 +18,7 @@ function Button({ color, label, children }) {
     return (
         <button
             style={buttonStyle}
+            onClick={onClick}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
