@@ -20,7 +20,6 @@ function CustomModal({ isOpen, onAfterOpen, onRequestClose, contentLabel, childr
       isOpen={isOpen}
       onAfterOpen={() => {
         if (onAfterOpen) onAfterOpen();
-        subtitle.style.color = '#f00';
       }}
       onRequestClose={onRequestClose}
       style={customStyles}
