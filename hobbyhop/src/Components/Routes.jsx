@@ -10,7 +10,7 @@ import NotFound from '../Pages/NotFound';
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/landing" element={<Landing />} />
+      <Route path="/" element={<Landing />} />
       <Route path="/feed" element={<Feed />} />
       <Route path="/bunnybuddies" element={<BunnyBuddies />} />
       <Route path="/explore" element={<Explore />} />
