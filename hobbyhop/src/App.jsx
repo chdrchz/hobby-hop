@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import AppRoutes from './Components/Routes';
-import Landing from "./Pages/Landing"
+
 
 const App = () => {
   return (
