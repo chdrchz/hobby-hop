@@ -20,7 +20,7 @@ const Hero = () => {
             friends, family, roommates, strangers,&nbsp;&nbsp;(this could be a carousel that rotates)
           </p>
         </div>
-        <Button color="gray">Create Account</Button>
+        <Button id="create-account" color="gray">Create Account</Button>
       </div>
     </div>
   );
