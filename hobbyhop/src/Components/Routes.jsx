@@ -5,6 +5,7 @@ import Landing from '../Pages/Landing';
 import Feed from '../Pages/Feed';
 import BunnyBuddies from '../Pages/BunnyBuddies';
 import Explore from '../Pages/Explore';
+import NotFound from '../Pages/NotFound';
 
 const AppRoutes = () => {
   return (
@@ -13,6 +14,7 @@ const AppRoutes = () => {
       <Route path="/feed" element={<Feed />} />
       <Route path="/bunnybuddies" element={<BunnyBuddies />} />
       <Route path="/explore" element={<Explore />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
