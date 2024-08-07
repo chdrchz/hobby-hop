@@ -1,5 +1,6 @@
 import React from "react";
 import "../Styles/Hero.css";
+import Button from "./Button";
 
 const Hero = () => {
   return (
@@ -19,6 +20,7 @@ const Hero = () => {
             friends, family, roommates, strangers,&nbsp;&nbsp;(this could be a carousel that rotates)
           </p>
         </div>
+        <Button color="gray">Create Account</Button>
       </div>
     </div>
   );
