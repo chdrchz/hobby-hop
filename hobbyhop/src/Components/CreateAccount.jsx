@@ -1,12 +1,23 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import '../Styles/CreateAccount.css';
 import Button from '../Components/Button.jsx';
 
 function CreateAccount() {
+    const navigate = useNavigate();
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // Add your form validation or submission logic here
+
+        // Navigate to the Feed page
+        navigate('/feed');
+    };
+
     return (
         <div className="form-container">
             <h1>Hobby Hop</h1>
-            <form action="/submit" method="post">
+            <form onSubmit={handleSubmit} method="post">
                 <label htmlFor="full-name"></label>
                 <input type="text" id="fullname" placeholder="Full Name" name="fullname" required />
                 
@@ -23,7 +34,7 @@ function CreateAccount() {
                 </div>
             </form>
         </div>
-    )
+    );
 }
 
 export default CreateAccount;
