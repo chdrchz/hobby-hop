@@ -1,7 +1,6 @@
 .hero {
   align-items: center;
   background-color: #ff773e;
-  border-radius: 50px;
   display: flex;
   gap: 50px; /* Adjusted for responsiveness */
   justify-content: center;

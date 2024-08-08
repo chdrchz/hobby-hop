@@ -5,7 +5,7 @@ import Hobbyhop from '../Assets/Hobbyhop.svg';
 function Header() {
     return (
         <header className="Header">
-            <div className="hobbyhoplogo">
+            <div className="hobbyhoplogo1">
                <img src={Hobbyhop} alt="HobbyhopLogo" />
             </div>
             <nav>

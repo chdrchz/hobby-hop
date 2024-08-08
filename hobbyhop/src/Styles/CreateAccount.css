@@ -1,20 +1,41 @@
 .form-container {
+  position: relative; /* Ensure pseudo-element is positioned correctly */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: lightgray;
   border-radius: 50px;
   height: 500px;
   width: 450px;
   gap: 20px;
+  overflow: hidden; /* Ensure blur effect does not overflow */
+}
+
+/* Add a pseudo-element for the background blur */
+.form-container::before {
+  border-radius: 8%;
+  
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: hsla(0, 0%, 100%, 0.3); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  z-index: -1; /* Ensure blur is behind the content */
 }
 
 form {
+  position: relative; /* Ensure it’s above the pseudo-element */
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 300px;
+  background: rgba(255, 255, 255, 0.9); /* Slightly opaque background for form */
+  padding: 20px;
+  border-radius: 25px;
 }
 
 form input[type="text"],
@@ -24,18 +45,36 @@ form input[type="password"] {
   border: 1px solid #ccc;
   border-radius: 25px;
   height: 20px;
+  background: #ffffff; /* Solid background for input fields */
+}
+
+form input[type="submit"] {
+  background: linear-gradient(135deg, #ef6f6c, #ddae7e);
+  border: none;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 form input[type="submit"]:hover {
-  background-color: black;
+  background: linear-gradient(135deg, #ddae7e, #ef6f6c);
 }
 
-.submit {
+.hobbyhoplogo {
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: center;
-  padding-top: 10px;
+  align-items: center;
+  width: 55svh;
+  margin: -10svh;
+  margin-bottom: -27px;
+}
+
+.hobbyhoplogo img {
+  height: auto;
+  max-width: 100%;
+  display: flex;
 }
 
 @media (max-width: 600px) {
@@ -52,10 +91,8 @@ form input[type="submit"]:hover {
     width: 100%;
   }
 
-  form input[type="text"],
-  form input[type="email"],
-  form input[type="password"],
-  form input[type="submit"] {
-    border-radius: 25px;
+  .hobbyhoplogo {
+    width: 30svh;
+    margin-bottom: -15px;
   }
 }

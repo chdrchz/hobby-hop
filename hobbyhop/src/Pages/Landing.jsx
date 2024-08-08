@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../Components/Header';
 import Hero from '../Components/Hero';
+import Footer from '../Components/Footer';
 import '../Styles/Landing.css';
 
 const Landing = () => {
@@ -9,6 +10,7 @@ const Landing = () => {
     <div> 
       <Header />
       <Hero />
+      <Footer />
     </div>
   );
 };

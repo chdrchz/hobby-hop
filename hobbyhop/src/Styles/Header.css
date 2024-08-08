@@ -7,11 +7,23 @@ header {
     padding-left: 100px;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: lightgray;
-    border-bottom: 2px solid gray;
+    background-color: #f2c57c;
+    border-bottom: 2px solid #000000;
 }
 
-.Hobbyhoplogo {
-    font-weight: bold;
-    font-size: 1.8rem;
+/* Header.css */
+.hobbyhoplogo1 {
+    display: flex; /* Centering or positioning might help */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 27svh; /* Adjust width */
+    margin: -10svh;
+    margin-bottom:-27px; /* Add margin if needed */
+ 
+}
+.hobbyhoplogo1 img {
+    /* Scale SVG to fit container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it does not exceed container */
+    display: flex; /* Remove extra space below image */
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from 'react-router-dom';
 import '../Styles/CreateAccount.css';
 import Button from '../Components/Button.jsx';
+import Hobbyhop from '../Assets/Hobbyhop.svg';
 
 function CreateAccount() {
     const navigate = useNavigate();
@@ -16,7 +17,9 @@ function CreateAccount() {
 
     return (
         <div className="form-container">
-            <h1>Hobby Hop</h1>
+            <div className="hobbyhoplogo">
+               <img src={Hobbyhop} alt="HobbyhopLogo" />
+            </div>
             <form onSubmit={handleSubmit} method="post">
                 <label htmlFor="full-name"></label>
                 <input type="text" id="fullname" placeholder="Full Name" name="fullname" required />
