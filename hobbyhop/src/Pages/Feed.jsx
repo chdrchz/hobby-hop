@@ -8,6 +8,7 @@ const Feed = () => {
     <div> 
       <Header />
       <SideNav />
+      
     </div>
   );
 };
