@@ -21,10 +21,8 @@ h1 {
 }
 
 .word {
-    position: absolute;
     animation: slide 3s ease infinite;
     font-size: 2rem;
-    color: #ef6f6c; /* Coral */
 }
 
 @keyframes slide {

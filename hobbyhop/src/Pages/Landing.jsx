@@ -3,7 +3,6 @@ import Header from '../Components/Header';
 import Hero from '../Components/Hero';
 import Footer from '../Components/Footer';
 import '../Styles/Landing.css';
-import VerticalCarousel from '../Components/VerticalCarousel';
 
 const Landing = () => {
 
@@ -12,7 +11,6 @@ const Landing = () => {
       <Header />
       <Hero />
       <Footer />
-      <VerticalCarousel />
     </div>
   );
 };

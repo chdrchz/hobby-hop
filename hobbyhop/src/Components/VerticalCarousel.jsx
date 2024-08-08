@@ -16,6 +16,7 @@ const VerticalCarousel = () => {
     return (
         <div className="carousel-container">
             <h1>HOP INTO WHAT YOU LOVE</h1>
+            <p>WITH</p>
             <div className="word-container">
                 <div className="word">{words[currentWordIndex]}</div>
             </div>

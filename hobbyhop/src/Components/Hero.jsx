@@ -4,6 +4,7 @@ import "../Styles/Hero.css";
 import Button from "./Button";
 import CustomModal from "./CustomModal";
 import CreateAccount from './CreateAccount';
+import VerticalCarousel from './VerticalCarousel';
 
 const Hero = () => {
 
@@ -24,17 +25,7 @@ const Hero = () => {
         <img className="humaaans-study" alt="Humaaans study" src="images/Humaaans.jpg" />
       </div>
       <div className="div">
-        <p className="HOP-INTO-WHAT-YOU">
-          <span className="text-wrapper">HOP</span>
-          <span className="span"> INTO WHAT YOU </span>
-          <span className="text-wrapper">LOVE</span>
-        </p>
-        <div className="text-wrapper-2">with</div>
-        <div className="friends-family-wrapper">
-          <p className="friends-family">
-            friends, family, roommates, strangers,(this could be a carousel that rotates)
-          </p>
-        </div>
+        <VerticalCarousel />
         <Button onClick={openModal} id="create-account" color="gray">Create Account</Button>
         <CustomModal
           isOpen={modalIsOpen}
