@@ -9,6 +9,9 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
+    background: 'transparent',
+    border: 'none',
+    borderRadius: '50px',
   },
 };
 
