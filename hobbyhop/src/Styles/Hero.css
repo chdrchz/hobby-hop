@@ -2,11 +2,12 @@
   align-items: center;
   background-color: #ff773e;
   display: flex;
-  gap: 50px; /* Adjusted for responsiveness */
+  gap: 50px;
   justify-content: center;
-  padding: 50px; /* Adjusted for responsiveness */
+  padding: 50px;
   position: relative;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  flex-wrap: wrap;
+  border-radius: 50px;
 }
 
 .hero .frame {
@@ -25,7 +26,7 @@
   margin-left: 0;
   object-fit: cover;
   width: 100%;
-  max-width: 400px; /* Adjusted for responsiveness */
+  max-width: 400px;
 }
 
 .hero .div {
@@ -33,40 +34,40 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: 20px; /* Adjusted for responsiveness */
+  gap: 20px;
   height: auto;
   justify-content: center;
-  padding: 20px; /* Adjusted for responsiveness */
+  padding: 20px;
 }
 
 .hero .HOP-INTO-WHAT-YOU {
   align-self: stretch;
   color: #000000;
   font-family: "Comfortaa-Bold", Helvetica;
-  font-size: 48px; /* Adjusted for responsiveness */
+  font-size: 48px;
   font-weight: 400;
-  letter-spacing: 7.2px; /* Adjusted for responsiveness */
+  letter-spacing: 7.2px;
   line-height: normal;
   text-align: center;
 }
 
 .hero .text-wrapper {
   font-weight: 700;
-  letter-spacing: 4.5px; /* Adjusted for responsiveness */
+  letter-spacing: 4.5px;
 }
 
 .hero .span {
   font-family: "Comfortaa-Light", Helvetica;
   font-weight: 300;
-  letter-spacing: 4.5px; /* Adjusted for responsiveness */
+  letter-spacing: 4.5px;
 }
 
 .hero .text-wrapper-2 {
   color: #000000;
   font-family: "Comfortaa-Regular", Helvetica;
-  font-size: 24px; /* Adjusted for responsiveness */
+  font-size: 24px;
   font-weight: 400;
-  letter-spacing: 3.6px; /* Adjusted for responsiveness */
+  letter-spacing: 3.6px;
   line-height: normal;
   text-align: right;
   white-space: nowrap;
@@ -87,9 +88,9 @@
 .hero .friends-family {
   color: #000000;
   font-family: "Comfortaa-Regular", Helvetica;
-  font-size: 16px; /* Adjusted for responsiveness */
+  font-size: 16px;
   font-weight: 400;
-  letter-spacing: 2.25px; /* Adjusted for responsiveness */
+  letter-spacing: 2.25px;
   line-height: normal;
   text-align: center;
 }

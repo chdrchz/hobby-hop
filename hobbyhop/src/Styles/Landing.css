@@ -4,3 +4,29 @@
     justify-content: space-between;
     height: 100vh;
 }
+
+.hero-container {
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .hero-container {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .hero-container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 575px) {
+    .hero-container {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}

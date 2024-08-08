@@ -9,7 +9,9 @@ const Landing = () => {
   return (
     <div className='landing'>
       <Header />
-      <Hero />
+      <div className='hero-container'>
+        <Hero />
+      </div>
       <Footer />
     </div>
   );
