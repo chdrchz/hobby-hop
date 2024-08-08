@@ -7,8 +7,8 @@
   border-radius: 50px;
   height: 500px;
   width: 450px;
-  gap: 20px;
   overflow: hidden; /* Ensure blur effect does not overflow */
+  padding-bottom: 25px;
 }
 
 /* Add a pseudo-element for the background blur */
@@ -66,9 +66,7 @@ form input[type="submit"]:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 55svh;
-  margin: -10svh;
-  margin-bottom: -27px;
+  width: 200px;
 }
 
 .hobbyhoplogo img {
@@ -92,7 +90,7 @@ form input[type="submit"]:hover {
   }
 
   .hobbyhoplogo {
-    width: 30svh;
+    width: 100%;
     margin-bottom: -15px;
   }
 }
