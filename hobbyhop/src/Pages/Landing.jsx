@@ -7,7 +7,7 @@ import '../Styles/Landing.css';
 const Landing = () => {
 
   return (
-    <div> 
+    <div className='landing'>
       <Header />
       <Hero />
       <Footer />

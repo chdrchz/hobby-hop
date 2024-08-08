@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
+import '../Styles/CustomModal.css';
 
 const customStyles = {
   content: {
@@ -29,7 +30,7 @@ function CustomModal({ isOpen, onAfterOpen, onRequestClose, contentLabel, childr
       contentLabel={contentLabel}
     >
       {children}
-      <button onClick={onRequestClose}>close</button>
+      <button className='modal-close-button' onClick={onRequestClose}>close</button>
     </ReactModal>
   );
 }
