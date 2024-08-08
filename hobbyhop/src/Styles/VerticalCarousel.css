@@ -1,0 +1,47 @@
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px; /* Adjust based on your design */
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #426a5a; 
+}
+
+.word-container {
+    position: relative;
+    height: 50px; 
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.word {
+    position: absolute;
+    animation: slide 3s ease infinite;
+    font-size: 2rem;
+    color: #ef6f6c; /* Coral */
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    10% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    90% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
