@@ -2,7 +2,7 @@ import React from "react";
 import "../Styles/Header.css";
 import Hobbyhop from "../Assets/Hobbyhop.svg";
 
-function Header() {
+function Header({ onUserProfileToggle }) {
   return (
     <header className="Header">
       <div className="hobbyhoplogo1">
@@ -90,7 +90,7 @@ function Header() {
           />
         </svg>
       </div>
-      <nav>
+      <nav onClick={onUserProfileToggle}>
         <svg
           width="35"
           height="35"

@@ -1,5 +1,4 @@
 import React from "react";
-import savPic from "../assets/sav-pic.jpeg";
 import '../Styles/UserProfile.css';
 
 
@@ -9,7 +8,7 @@ function UserProfile() {
         <div class="profile-container">
             <div className="inner-container">
                 <div className="profile-image">
-                    <img src={savPic} alt="Profile" style={{ width: '150px', height: '150px' }} />
+                    
                 </div>
                 <div className="profile-description">
                     <div className="profile-bio">

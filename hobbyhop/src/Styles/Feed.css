@@ -8,6 +8,11 @@
   display: flex;
   flex: 1;
   overflow: hidden;
+  justify-content: space-between;
+}
+
+.without-sidenav {
+  padding: 15px;
 }
 
 .side-nav {
@@ -27,4 +32,12 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  /* Adjust for tablets */
+  .feed-container {
+    flex-direction: column;
+  }
 }
