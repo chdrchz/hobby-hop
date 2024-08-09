@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProfileCard.css';
+import '../Styles/ProfileCards.css';
 
 const ProfileCard = ({ image, name, bio, hobby }) => {
   return (
