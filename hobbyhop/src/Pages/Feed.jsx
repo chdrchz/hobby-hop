@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../Components/Header';
 import SideNav from '../Components/SideNav';
 import CustomFeed from '../Components/CustomFeed';
-import Footer from '../Components/Footer';
 import '../Styles/Feed.css';
 const Feed = () => {
   return (

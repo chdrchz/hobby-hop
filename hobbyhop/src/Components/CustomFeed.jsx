@@ -1,29 +1,118 @@
 import React from "react";
+import HobbyCards from "./HobbyCards";
 import "../Styles/CustomFeed.css";
+import Pottery from "../Assets/Pottery.jpg";
 
 const CustomFeed = () => {
-  // Example posts
+  const hobbyData = [
+    {
+      image: "https://example.com/image1.jpg",
+      description: "Join us for a pottery class.",
+      time: "10:00 AM",
+      date: "August 12, 2024",
+      location: "Art Studio, Downtown",
+      hostedBy: "Jane Doe",
+    },
+    {
+      image: "https://example.com/image1.jpg",
+      description: "Join us for a pottery class.",
+      time: "10:00 AM",
+      date: "August 12, 2024",
+      location: "Art Studio, Downtown",
+      hostedBy: "Jane Doe",
+    },
+    {
+      image: "https://example.com/image1.jpg",
+      description: "Join us for a pottery class.",
+      time: "10:00 AM",
+      date: "August 12, 2024",
+      location: "Art Studio, Downtown",
+      hostedBy: "Jane Doe",
+    },
+    {
+      image: "https://example.com/image1.jpg",
+      description: "Join us for a pottery class.",
+      time: "10:00 AM",
+      date: "August 12, 2024",
+      location: "Art Studio, Downtown",
+      hostedBy: "Jane Doe",
+    },
+    {
+      image: "https://example.com/image1.jpg",
+      description: "Join us for a pottery class.",
+      time: "10:00 AM",
+      date: "August 12, 2024",
+      location: "Art Studio, Downtown",
+      hostedBy: "Jane Doe",
+    },
+    {
+      image: "https://example.com/image1.jpg",
+      description: "Join us for a pottery class.",
+      time: "10:00 AM",
+      date: "August 12, 2024",
+      location: "Art Studio, Downtown",
+      hostedBy: "Jane Doe",
+    },
+    {
+      image: "https://example.com/image1.jpg",
+      description: "Join us for a pottery class.",
+      time: "10:00 AM",
+      date: "August 12, 2024",
+      location: "Art Studio, Downtown",
+      hostedBy: "Jane Doe",
+    },
+    {
+      image: "https://example.com/image1.jpg",
+      description: "Join us for a pottery class.",
+      time: "10:00 AM",
+      date: "August 12, 2024",
+      location: "Art Studio, Downtown",
+      hostedBy: "Jane Doe",
+    },
+    {
+      image: "https://example.com/image1.jpg",
+      description: "Join us for a pottery class.",
+      time: "10:00 AM",
+      date: "August 12, 2024",
+      location: "Art Studio, Downtown",
+      hostedBy: "Jane Doe",
+    },
+    {
+      image: "https://example.com/image1.jpg",
+      description: "Join us for a pottery class.",
+      time: "10:00 AM",
+      date: "August 12, 2024",
+      location: "Art Studio, Downtown",
+      hostedBy: "Jane Doe",
+    },
+    {
+      image: "https://example.com/image1.jpg",
+      description: "Join us for a pottery class.",
+      time: "10:00 AM",
+      date: "August 12, 2024",
+      location: "Art Studio, Downtown",
+      hostedBy: "Jane Doe",
+    },
+  ];
+
   const posts = [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "Here's a cool update! Check out the new feature we added.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "Just had an amazing lunch at the new cafe in town!",
+    "Excited for the upcoming event this weekend!",
+    "Can’t believe how quickly this week is flying by! Can’t believe how quickly this week is flying by! Can’t believe how quickly this week is flying by!",
   ];
 
   const columns = 4;
+  const columnData = Array.from({ length: columns }, (_, columnIndex) =>
+    hobbyData.filter((_, i) => i % columns === columnIndex)
+  );
 
   return (
     <div className="feed-container">
-      {Array.from({ length: columns }).map((_, index) => (
-        <div className="column" key={index}>
-          {posts.slice(index, posts.length).filter((_, i) => (i + index) % columns === index).map((post, i) => (
-            <div className="individual-post" key={`${index}-${i}`}>
-              {post}
-            </div>
+      {columnData.map((column, columnIndex) => (
+        <div className="column" key={columnIndex}>
+          {column.map((hobby, i) => (
+            <HobbyCards key={`${columnIndex}-${i}`} {...hobby} />
           ))}
         </div>
       ))}
