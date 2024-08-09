@@ -3,9 +3,7 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: #f2c57c; /* Light yellow for footer background */
-    color: #426a5a; /* Dark green for text */
-    border-top:3px solid #000000; /* Light gray border on top */
+    background-color: black;
 }
 
 .footer-content {

@@ -1,6 +1,6 @@
 .hero {
   align-items: center;
-  background-color: #ff773e;
+  background-color: black;
   display: flex;
   gap: 50px;
   justify-content: center;
@@ -12,13 +12,13 @@
 
 .hero .frame {
   align-items: flex-start;
-  align-self: stretch;
   display: flex;
   flex: 1;
   flex-direction: column;
   gap: 10px;
   padding: 10px;
   position: relative;
+  align-items: center;
 }
 
 .hero .humaaans-study {
@@ -125,10 +125,6 @@
     padding: 20px;
   }
 
-  .hero .humaaans-study {
-    max-width: 100%;
-  }
-
   .hero .div {
     padding: 20px;
   }
@@ -169,4 +165,8 @@
     font-size: 14px;
     letter-spacing: 1.5px;
   }
+}
+
+#landing-svg {
+  fill: orange;
 }
