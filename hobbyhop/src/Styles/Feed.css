@@ -1,0 +1,30 @@
+.feed {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.feed-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.side-nav {
+  width: 30px;
+}
+
+.all-posts {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 50px;
+  gap: 25px;
+}
+
+.sort-posts {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

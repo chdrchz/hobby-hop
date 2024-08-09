@@ -1,0 +1,19 @@
+.feed-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: calc(90% / 4);
+}
+
+.individual-post {
+  background-color: gray;
+  padding: 25px;
+  border-radius: 25px;
+}
