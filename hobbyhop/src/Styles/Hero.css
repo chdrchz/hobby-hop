@@ -10,6 +10,12 @@
   border-radius: 50px;
 }
 
+.hero::before {
+  backdrop-filter: blur(50px);
+  z-index: -1;
+  background: hsla(0, 0%, 100%, 0.3);
+}
+
 .hero .frame {
   align-items: flex-start;
   display: flex;
