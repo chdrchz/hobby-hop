@@ -3,21 +3,27 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 200px; /* Adjust based on your design */
+    height: auto;
     margin: 0 auto;
     text-align: center;
 }
 
+.carousel-container h1 {
+    font-size: 3rem;
+}
+
 .word-container {
     position: relative;
-    height: 50px; 
+    height: auto; 
     overflow: hidden;
     margin-top: 10px;
 }
 
 .word {
     animation: slide 3s ease infinite;
-    font-size: 2rem;
+    font-size: 2.6rem;
+    color: #cc9ab5;
+    letter-spacing: 3px;
 }
 
 @keyframes slide {

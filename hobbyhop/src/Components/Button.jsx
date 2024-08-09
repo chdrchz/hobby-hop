@@ -5,14 +5,16 @@ function Button({ onClick, color, label, children }) {
 
     // Inline styles for the button
     const buttonStyle = {
-        backgroundColor: isHovered ? 'darkgray' : color,
-        color: 'white',
+        backgroundColor: isHovered ? '#7c8a43' : color,
+        color: 'black',
         border: 'none',
         borderRadius: '25px',
         padding: '10px 20px',
         cursor: 'pointer',
         width: 'auto',
         transition: 'background-color 0.3s ease',
+        fontSize: '1rem',
+        fontFamily: 'Comfortaa, sans-serif',
     };
 
     return (
