@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../Styles/VerticalCarousel.css'
 
 const VerticalCarousel = () => {
-    const words = ["friends", "family", "roommates", "strangers"];
+    const words = ["with friends", "with family", "with roommates", "with strangers"];
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
     useEffect(() => {
@@ -15,8 +15,7 @@ const VerticalCarousel = () => {
 
     return (
         <div className="carousel-container">
-            <h1>HOP INTO WHAT YOU LOVE</h1>
-            <p>WITH</p>
+            <h1><span>HOP</span> INTO WHAT YOU <span>LOVE</span></h1>
             <div className="word-container">
                 <div className="word">{words[currentWordIndex]}</div>
             </div>

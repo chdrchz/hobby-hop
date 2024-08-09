@@ -23,7 +23,7 @@ const Hero = () => {
     <div className="hero">
       <div className="div">
         <VerticalCarousel />
-        <Button onClick={openModal} id="create-account" color="#b8cc76">hop in!</Button>
+        <Button onClick={openModal} id="create-account" color="#b8cc76">hop in</Button>
         <CustomModal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}

@@ -13,7 +13,7 @@ function Button({ onClick, color, label, children }) {
         cursor: 'pointer',
         width: 'auto',
         transition: 'background-color 0.3s ease',
-        fontSize: '1rem',
+        fontSize: '1.5rem',
         fontFamily: 'Comfortaa, sans-serif',
     };
 
