@@ -1,7 +1,6 @@
 import React from "react";
 import HobbyCards from "./HobbyCards";
 import "../Styles/CustomFeed.css";
-import Pottery from "../Assets/Pottery.jpg";
 
 const CustomFeed = () => {
   const hobbyData = [
@@ -108,7 +107,7 @@ const CustomFeed = () => {
   );
 
   return (
-    <div className="feed-container">
+    <div className="feed-container1">
       {columnData.map((column, columnIndex) => (
         <div className="column" key={columnIndex}>
           {column.map((hobby, i) => (
