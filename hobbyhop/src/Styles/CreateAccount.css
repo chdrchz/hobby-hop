@@ -14,7 +14,6 @@
 /* Add a pseudo-element for the background blur */
 .form-container::before {
   border-radius: 8%;
-  
   content: '';
   position: absolute;
   top: 0;
