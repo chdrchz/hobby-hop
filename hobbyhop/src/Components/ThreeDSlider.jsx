@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from "react-slick";
-import ProfileCard from './ProfileCards';
+import ProfileCard from './ProfileCard';
 import '../Styles/ThreeDSlider.css';
 
 const ThreeDSlider = () => {
