@@ -1,0 +1,30 @@
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-top: 20px;
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.accordion-header h3 {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.accordion-content {
+    display: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.accordion-item:hover .accordion-content {
+    display: block;
+}
