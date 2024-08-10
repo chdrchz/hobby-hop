@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   gap: 15px;
+  padding: 50px;
 }
 
 .column {
@@ -9,4 +10,8 @@
   flex-direction: column;
   gap: 15px;
   width: calc(90% / 4);
+}
+
+.sort-posts {
+  padding: 50px;
 }
