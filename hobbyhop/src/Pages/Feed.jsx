@@ -16,7 +16,6 @@ const Feed = () => {
     <div className='feed'>
       <Header onUserProfileToggle={toggleUserProfile} />
       <div className='feed-container'>
-        <SideNav />
         <div className='without-sidenav'>
         {isUserProfileVisible ? (
           <UserProfile className="user-profile" />

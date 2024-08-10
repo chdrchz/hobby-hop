@@ -76,7 +76,7 @@ const CustomFeed = () => {
     "Excited for the upcoming event this weekend!",
     "Can’t believe how quickly this week is flying by! Can’t believe how quickly this week is flying by! Can’t believe how quickly this week is flying by!",
   ];
-  const columns = 4;
+  const columns = 5;
 
   const combinedData = [
     ...hobbyData.map((hobby) => ({ type: "hobby", ...hobby })),

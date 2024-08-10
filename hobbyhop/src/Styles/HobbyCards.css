@@ -1,5 +1,6 @@
 .hobby-card {
     padding: 25px;
     border-radius: 25px;
-    background-color: lightgray;
+    background-color: #b8cc76;
+    color: black;
 }
