@@ -76,16 +76,19 @@ const CustomFeed = () => {
     "Excited for the upcoming event this weekend!",
     "Can’t believe how quickly this week is flying by! Can’t believe how quickly this week is flying by! Can’t believe how quickly this week is flying by!",
   ];
+
   const columns = 5;
 
-  const combinedData = [
-    ...hobbyData.map((hobby) => ({ type: "hobby", ...hobby })),
-    ...posts.map((post) => ({ type: "post", content: post })),
-  ];
+  const interleavedData = [];
+  const maxLength = Math.max(hobbyData.length, posts.length);
 
-  // Distribute data evenly across columns
+  for (let i = 0; i < maxLength; i++) {
+    if (hobbyData[i]) interleavedData.push({ type: "hobby", ...hobbyData[i] });
+    if (posts[i]) interleavedData.push({ type: "post", content: posts[i] });
+  }
+
   const columnData = Array.from({ length: columns }, (_, columnIndex) =>
-    combinedData.filter((item, index) => index % columns === columnIndex)
+    interleavedData.filter((_, index) => index % columns === columnIndex)
   );
 
   return (
@@ -93,7 +96,10 @@ const CustomFeed = () => {
       {columnData.map((column, columnIndex) => (
         <div className="column" key={columnIndex}>
           {column.map((item, index) => (
-            <div key={`${columnIndex}-${index}`} className={`item ${item.type}`}>
+            <div
+              key={`${columnIndex}-${index}`}
+              className={`item ${item.type}`}
+            >
               {item.type === "hobby" ? (
                 <HobbyCards key={index} {...item} />
               ) : (

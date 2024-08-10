@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Header from '../Components/Header';
-import SideNav from '../Components/SideNav';
 import CustomFeed from '../Components/CustomFeed';
 import UserProfile from '../Components/UserProfile';
 import '../Styles/Feed.css';
@@ -16,7 +15,6 @@ const Feed = () => {
     <div className='feed'>
       <Header onUserProfileToggle={toggleUserProfile} />
       <div className='feed-container'>
-        <div className='without-sidenav'>
         {isUserProfileVisible ? (
           <UserProfile className="user-profile" />
         ) : (
@@ -27,7 +25,6 @@ const Feed = () => {
             <CustomFeed />
           </div>
         )}
-      </div>
       </div>
     </div>
   );
