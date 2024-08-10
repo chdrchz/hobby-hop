@@ -2,7 +2,9 @@
   display: flex;
   justify-content: space-between;
   gap: 15px;
-  padding: 50px;
+  width: auto;
+  margin-right: 25px;
+  margin-left: 25px;
 }
 
 .column {
@@ -13,5 +15,5 @@
 }
 
 .sort-posts {
-  padding: 50px;
+  padding: 100px;
 }

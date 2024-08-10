@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import HobbyCards from "./HobbyCards";
+import PostCards from "./PostCards";
 import "../Styles/CustomFeed.css";
 
 const CustomFeed = () => {
+
   const hobbyData = [
     {
       image: "https://example.com/image1.jpg",
@@ -71,20 +73,72 @@ const CustomFeed = () => {
   ];
 
   const posts = [
-    "Here's a cool update! Check out the new feature we added.",
-    "Just had an amazing lunch at the new cafe in town!",
-    "Excited for the upcoming event this weekend!",
-    "Can’t believe how quickly this week is flying by! Can’t believe how quickly this week is flying by! Can’t believe how quickly this week is flying by!",
+    {
+      content: "This is a sample post",
+      image: "https://example.com/post-image.jpg",
+      location: "Online",
+      date: "August 15, 2024",
+      linkToClass: "https://example.com/class-link",
+    },
+    {
+      content: "This is a sample post",
+      image: "https://example.com/post-image.jpg",
+      location: "Online",
+      date: "August 15, 2024",
+      linkToClass: "https://example.com/class-link",
+    },
+    {
+      content: "This is a sample post",
+      image: "https://example.com/post-image.jpg",
+      location: "Online",
+      date: "August 15, 2024",
+      linkToClass: "https://example.com/class-link",
+    },
+    {
+      content: "This is a sample post",
+      image: "https://example.com/post-image.jpg",
+      location: "Online",
+      date: "August 15, 2024",
+      linkToClass: "https://example.com/class-link",
+    },
   ];
+  
+  function getColumnsForScreenWidth() {
+    const width = window.innerWidth;
+    if (width >= 1300) {
+      return 6;
+    } else if (width >= 600) {
+      return 4;
+    } else {
+      return 2;
+    }
+  }
 
-  const columns = 5;
+  // set state for column switches
+  const [columns, setColumns] = useState(getColumnsForScreenWidth());
+  
+  useEffect(() => {
+    const handleResize = () => setColumns(getColumnsForScreenWidth());
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const interleavedData = [];
   const maxLength = Math.max(hobbyData.length, posts.length);
 
   for (let i = 0; i < maxLength; i++) {
-    if (hobbyData[i]) interleavedData.push({ type: "hobby", ...hobbyData[i] });
-    if (posts[i]) interleavedData.push({ type: "post", content: posts[i] });
+    if (hobbyData[i]) {
+      interleavedData.push({ type: "hobby", ...hobbyData[i] });
+    }
+    if (posts[i]) {
+      interleavedData.push({
+        type: "post",
+        content: posts[i],
+        image: hobbyData[i]?.image, // Access optional image from hobbyData
+        location: hobbyData[i]?.location,
+        linkToClass: hobbyData[i]?.linkToClass,
+      });
+    }
   }
 
   const columnData = Array.from({ length: columns }, (_, columnIndex) =>
@@ -103,7 +157,7 @@ const CustomFeed = () => {
               {item.type === "hobby" ? (
                 <HobbyCards key={index} {...item} />
               ) : (
-                <p>{item.content}</p>
+                <PostCards key={index} content={item.content} {...item} /> // Pass additional props if needed
               )}
             </div>
           ))}

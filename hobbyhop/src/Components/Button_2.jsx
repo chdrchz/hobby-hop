@@ -1,12 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Button({ onClick, label, children, svg }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 1000); // Adjust breakpoint as needed
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Initial check
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Inline styles for the button
   const buttonStyle = {
-    backgroundColor: isHovered ? "#7c8a43" : 'transparent',
-    backgroundImage: isHovered ? '' : 'radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(52,9,30,1) 0%, rgba(21,27,37,1) 100%)',
+    backgroundColor: isHovered ? "#7c8a43" : "transparent",
+    backgroundImage: isHovered
+      ? ""
+      : "radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(52,9,30,1) 0%, rgba(21,27,37,1) 100%)",
     color: "white",
     border: "1px solid white",
     borderRadius: "25px",
@@ -16,10 +28,10 @@ function Button({ onClick, label, children, svg }) {
     transition: "background-color 0.3s ease",
     fontSize: "1.1rem",
     fontFamily: "Comfortaa, sans-serif",
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '10px',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "10px",
   };
 
   return (
@@ -29,7 +41,7 @@ function Button({ onClick, label, children, svg }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {svg && <span>{svg}</span>}
+      {!isSmallScreen && svg && <span>{svg}</span>}
       {label || children}
     </button>
   );
