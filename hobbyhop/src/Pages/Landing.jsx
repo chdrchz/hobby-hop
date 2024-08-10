@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState, useContext } from 'react';
 import Header from '../Components/Header';
 import Hero from '../Components/Hero';
 import Footer from '../Components/Footer';

@@ -4,16 +4,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 50px;
-  height: 500px;
-  width: 450px;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden; /* Ensure blur effect does not overflow */
   padding-bottom: 25px;
 }
 
 /* Add a pseudo-element for the background blur */
 .form-container::before {
-  border-radius: 8%;
   content: '';
   position: absolute;
   top: 0;
@@ -26,14 +24,39 @@
   z-index: -1; /* Ensure blur is behind the content */
 }
 
+.form-container h1 {
+  color: white;
+}
+
+.exit-create-account {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  cursor: pointer;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 25px;
+}
+
+.hobbyhoplogo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 form {
   position: relative; /* Ensure it’s above the pseudo-element */
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  width: 300px;
-  background: rgba(255, 255, 255, 0.9); /* Slightly opaque background for form */
-  padding: 20px;
+  gap: 20px;
+  width: 400px;
+  background: rgb(2,0,36);
+  background: radial-gradient(circle at 25px 50px, rgba(2,0,36,1) 0%, rgba(52,9,30,1) 0%, rgba(21,27,37,1) 100%); /* Slightly opaque background for form */
+  padding: 50px;
   border-radius: 25px;
 }
 
@@ -41,37 +64,15 @@ form input[type="text"],
 form input[type="email"],
 form input[type="password"] {
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 25px;
   height: 20px;
-  background: #ffffff; /* Solid background for input fields */
+  border: none;
+ /* Solid background for input fields */
 }
 
 form input[type="submit"] {
-  background: linear-gradient(135deg, #ef6f6c, #ddae7e);
   border: none;
-  color: #ffffff;
   padding: 15px;
   border-radius: 25px;
-  cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-form input[type="submit"]:hover {
-  background: linear-gradient(135deg, #ddae7e, #ef6f6c);
-}
-
-.hobbyhoplogo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-}
-
-.hobbyhoplogo img {
-  height: auto;
-  max-width: 100%;
-  display: flex;
 }
 
 @media (max-width: 600px) {
