@@ -3,6 +3,7 @@ import Header from "../Components/Header";
 import CustomFeed from "../Components/CustomFeed";
 import UserProfile from "../Components/UserProfile";
 import SideNav from "../Components/SideNav";
+import SortFeed from "../Components/SortFeed";
 import "../Styles/Feed.css";
 
 const Feed = () => {
@@ -14,14 +15,13 @@ const Feed = () => {
 
   return (
     <div className="feed">
-      <Header onUserProfileToggle={toggleUserProfile} />
       <SideNav />
       <div className="feed-container">
         {isUserProfileVisible ? (
           <UserProfile className="user-profile" />
         ) : (
           <div>
-            <div className="sort-posts">
+            <div className="feed-header">
               <h1>
                 HOP{" "}
                 <span>
@@ -37,9 +37,12 @@ const Feed = () => {
                       fill="white"
                     />
                   </svg>
-                </span> 
-                {" "}INTO SOMETHING NEW
+                </span>{" "}
+                INTO SOMETHING NEW
               </h1>
+            </div>
+            <div>
+              <SortFeed />
             </div>
             <CustomFeed />
           </div>

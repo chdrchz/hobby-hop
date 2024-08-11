@@ -21,6 +21,15 @@
   width: 30px;
 }
 
+.svg-container-logo {
+  height: 100%;
+  width: 100%;
+}
+
+.logo-svg {
+  height: 100%;
+  width: 250px;
+}
 .icon {
   width: 60px;
   height: 60px;
