@@ -101,6 +101,27 @@ const CustomFeed = () => {
       date: "August 15, 2024",
       linkToClass: "https://example.com/class-link",
     },
+    {
+      content: "This is a sample post",
+      image: "https://example.com/post-image.jpg",
+      location: "Online",
+      date: "August 15, 2024",
+      linkToClass: "https://example.com/class-link",
+    },
+    {
+      content: "This is a sample post",
+      image: "https://example.com/post-image.jpg",
+      location: "Online",
+      date: "August 15, 2024",
+      linkToClass: "https://example.com/class-link",
+    },
+    {
+      content: "This is a sample post",
+      image: "https://example.com/post-image.jpg",
+      location: "Online",
+      date: "August 15, 2024",
+      linkToClass: "https://example.com/class-link",
+    },
   ];
   
   function getColumnsForScreenWidth() {

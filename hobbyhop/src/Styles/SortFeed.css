@@ -7,3 +7,14 @@
     padding-bottom: 25px;
     align-items: center;
 }
+
+.sort-buttons a {
+    color: white; /* Change this to your desired color */
+    text-decoration: underline;
+    padding: 5px 10px; /* Optional: Add some padding for better spacing */
+  }
+  
+  .sort-buttons a:hover {
+    color: #7c8a43; /* Change this to your desired hover color */
+    text-decoration: underline; /* Optional: Adds underline on hover */
+  }
