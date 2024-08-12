@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Button({ onClick, label, children, svg }) {
+function Button({ onClick, label, color, children, svg }) {
   const [isHovered, setIsHovered] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
@@ -15,12 +15,9 @@ function Button({ onClick, label, children, svg }) {
 
   // Inline styles for the button
   const buttonStyle = {
-    backgroundColor: isHovered ? "#7c8a43" : "transparent",
-    backgroundImage: isHovered
-      ? ""
-      : "radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(52,9,30,1) 0%, rgba(21,27,37,1) 100%)",
-    color: "white",
-    border: "1px solid white",
+    backgroundColor: isHovered ? "#7c8a43" : color,
+    color: "black",
+    border: "none",
     borderRadius: "25px",
     padding: "10px 20px",
     cursor: "pointer",
