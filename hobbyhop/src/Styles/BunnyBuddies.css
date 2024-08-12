@@ -49,3 +49,8 @@ body {
     border-radius: 20px;
     padding: 20px;
 }
+
+.header-container {
+    width: 200px; /* Adjust width as needed */
+    height: 100%; /* Ensure it fills the available height */
+}

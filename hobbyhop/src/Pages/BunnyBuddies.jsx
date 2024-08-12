@@ -1,19 +1,23 @@
-import React from "react";
-import Header from '../Components/Header';
+import React, { useState } from "react";
 import '../Styles/BunnyBuddies.css';
 import ThreeDSlider from '../Components/ThreeDSlider';
 import ChatWindow from '../Components/ChatWindow'; 
+import SideNav from "../Components/SideNav";
 
 function BunnyBuddies() {
-    return (
-        <div className="bunnybuddies-container">
-            <div className="content-container">
-                <Header />
-                <ThreeDSlider />
-            </div>
-            <ChatWindow /> 
+    const isBunnyBuddiesPage = true;
+
+  return (
+    <div className="bunnybuddies-container">
+      <div className="content-container">
+        <div className="header-container">
+          <SideNav isBunnyBuddiesPage={isBunnyBuddiesPage}/>
         </div>
-    )
+        <ThreeDSlider />
+      </div>
+      <ChatWindow /> 
+    </div>
+  );
 }
 
 export default BunnyBuddies;

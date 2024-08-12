@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 
-function Button({ onClick, label, color, children, svg }) {
+function Button({ onClick, label, color, children, svg, isBunnyBuddiesPage }) {
   const [isHovered, setIsHovered] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 1000); // Adjust breakpoint as needed
+      setIsSmallScreen(window.innerWidth   
+ < 1000); // Adjust breakpoint as needed
     };
     window.addEventListener("resize", handleResize);
     handleResize(); // Initial check
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);   
+
   }, []);
 
   // Inline styles for the button
@@ -39,7 +41,7 @@ function Button({ onClick, label, color, children, svg }) {
       onMouseLeave={() => setIsHovered(false)}
     >
       {!isSmallScreen && svg && <span>{svg}</span>}
-      {label || children}
+      {!isBunnyBuddiesPage && children}
     </button>
   );
 }

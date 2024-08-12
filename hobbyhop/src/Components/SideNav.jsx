@@ -1,10 +1,13 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import "../Styles/SideNav.css";
 import Button_2 from "./Button_2";
 
-function SideNav() {
+function SideNav({ showText }) {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isBunnyBuddiesPage = location.pathname === '/bunnybuddies';
 
   const handleExploreClick = () => {
     navigate('/explore');
@@ -18,10 +21,19 @@ function SideNav() {
     navigate('/profile');
   }
 
+  const handleBuddiesClick = () => {
+    navigate('/bunnybuddies');
+  }
+
+  // This will need to be rendered conditionally if user is logged in or not
+  const handleHomeClick = () => {
+    navigate('/');
+  }
+
   return (
     <div className="side-nav">
       <div className="nav-item">
-        <Button_2 onClick={handleFeedClick} color="#b8cc76"
+        <Button_2 isBunnyBuddiesPage={isBunnyBuddiesPage} onClick={handleFeedClick} color="#b8cc76"
           svg={
             <svg
               className="icon"
@@ -49,7 +61,7 @@ function SideNav() {
         </Button_2>
       </div>
       <div className="nav-item">
-        <Button_2 color="#b8cc76"
+        <Button_2 isBunnyBuddiesPage={isBunnyBuddiesPage} color="#b8cc76" showText={!isBunnyBuddiesPage}
           svg={
             <svg
               className="icon"
@@ -77,7 +89,7 @@ function SideNav() {
         </Button_2>
       </div>
       <div className="nav-item">
-        <Button_2 onClick={handleExploreClick} color="#b8cc76"
+        <Button_2 isBunnyBuddiesPage={isBunnyBuddiesPage} onClick={handleExploreClick} showText={!isBunnyBuddiesPage} color="#b8cc76"
           svg={
             <svg
               className="icon"
@@ -105,7 +117,7 @@ function SideNav() {
         </Button_2>
       </div>
       <div>
-        <div className="svg-container-logo">
+        <div onClick={handleHomeClick} className="svg-container-logo">
           <svg
             className="logo-svg"
             width="1639"
@@ -193,7 +205,7 @@ function SideNav() {
         </div>
       </div>
       <div className="nav-item">
-        <Button_2 color="#b8cc76"
+        <Button_2 isBunnyBuddiesPage={isBunnyBuddiesPage} onClick={handleBuddiesClick} color="#b8cc76"
           svg={
             <svg
               width="371"
@@ -228,7 +240,7 @@ function SideNav() {
         </Button_2>
       </div>
       <div className="nav-item">
-        <Button_2 onClick={handleProfileClick} color="#b8cc76"
+        <Button_2 isBunnyBuddiesPage={isBunnyBuddiesPage} onClick={handleProfileClick} color="#b8cc76"
           svg={
             <svg
               className="icon"
