@@ -3,7 +3,7 @@ import '../Styles/UserProfile.css';
 
 
 // This will eventually be from the database 
-function UserProfile() {
+function Profile() {
     return (
         <div class="profile-container">
             <div className="inner-container">
@@ -55,4 +55,4 @@ function UserProfile() {
     )
 }
 
-export default UserProfile;
+export default Profile;

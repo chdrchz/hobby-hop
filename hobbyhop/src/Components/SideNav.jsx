@@ -1,12 +1,27 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import "../Styles/SideNav.css";
 import Button_2 from "./Button_2";
 
 function SideNav() {
+  const navigate = useNavigate();
+
+  const handleExploreClick = () => {
+    navigate('/explore');
+  };
+
+  const handleFeedClick = () => {
+    navigate('/feed');
+  }
+
+  const handleProfileClick = () => {
+    navigate('/profile');
+  }
+
   return (
     <div className="side-nav">
       <div className="nav-item">
-        <Button_2 color="#b8cc76"
+        <Button_2 onClick={handleFeedClick} color="#b8cc76"
           svg={
             <svg
               className="icon"
@@ -62,7 +77,7 @@ function SideNav() {
         </Button_2>
       </div>
       <div className="nav-item">
-        <Button_2 color="#b8cc76"
+        <Button_2 onClick={handleExploreClick} color="#b8cc76"
           svg={
             <svg
               className="icon"
@@ -92,7 +107,7 @@ function SideNav() {
       <div>
         <div className="svg-container-logo">
           <svg
-          className="logo-svg"
+            className="logo-svg"
             width="1639"
             height="463"
             viewBox="0 0 1639 463"
@@ -213,7 +228,7 @@ function SideNav() {
         </Button_2>
       </div>
       <div className="nav-item">
-        <Button_2 color="#b8cc76"
+        <Button_2 onClick={handleProfileClick} color="#b8cc76"
           svg={
             <svg
               className="icon"
