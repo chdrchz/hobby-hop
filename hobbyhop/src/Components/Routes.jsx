@@ -15,8 +15,8 @@ const AppRoutes = () => {
       <Route path="/feed" element={<Feed />} />
       <Route path="/bunnybuddies" element={<BunnyBuddies />} />
       <Route path="/explore" element={<Explore />} />
-      <Route path="*" element={<NotFound />} />
       <Route path="/profile" element={<UserProfile />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
