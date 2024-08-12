@@ -1,11 +1,24 @@
-import React from 'react';
+// ThreeDSlider.jsx
+import React, { useEffect, useState } from 'react';
 import Slider from "react-slick";
 import ProfileCard from './ProfileCard';
-import "slick-carousel/slick/slick-theme.css";
+import { getHobbies } from '../firebase/getHobbies';
 import '../Styles/ThreeDSlider.css';
 
 const ThreeDSlider = () => {
+  const [hobbies, setHobbies] = useState([]);
+
+  useEffect(() => {
+    const fetchHobbies = async () => {
+      const hobbiesData = await getHobbies();
+      setHobbies(hobbiesData);
+    };
+
+    fetchHobbies();
+  }, []);
+
   const settings = {
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: window.innerWidth > 768 ? 3 : 1,
@@ -27,38 +40,15 @@ const ThreeDSlider = () => {
   return (
     <div className="slider-container">
       <Slider {...settings}>
-        <div className="slider-item">
+        {hobbies.map(hobby => (
           <ProfileCard
-            image="https://via.placeholder.com/150"
-            name="John Doe"
-            bio="Web developer and coffee enthusiast. Loves coding and exploring new technologies."
-            hobby="Photography"
+            key={hobby.id}
+            image="https://via.placeholder.com/150" // Update if you have actual images
+            name={hobby.name}
+            bio={hobby.description || "No description available"}
+            hobby={hobby.name}
           />
-        </div>
-        <div className="slider-item">
-          <ProfileCard
-            image="https://via.placeholder.com/150"
-            name="Jane Smith"
-            bio="Graphic designer with a passion for creative arts. Enjoys painting and digital design."
-            hobby="Drawing"
-          />
-        </div>
-        <div className="slider-item">
-          <ProfileCard
-            image="https://via.placeholder.com/150"
-            name="Alice Johnson"
-            bio="Digital marketer who loves to travel and discover new cultures. Always learning."
-            hobby="Traveling"
-          />
-        </div>
-        <div className="slider-item">
-          <ProfileCard
-            image="https://via.placeholder.com/150"
-            name="Michael Brown"
-            bio="Fitness coach with a love for healthy living. Dedicated to helping others achieve their goals."
-            hobby="Fitness"
-          />
-        </div>
+        ))}
       </Slider>
     </div>
   );
