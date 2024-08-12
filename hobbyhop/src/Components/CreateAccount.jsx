@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../firebase/firebase-config.js'; // adjust the path to your firebase.js file
+import { doc, setDoc } from 'firebase/firestore';
+import { auth, db } from '../firebase/firebase-config.js';
 import "../Styles/CreateAccount.css";
 import Button from "../Components/Button.jsx";
 
@@ -24,6 +25,14 @@ function CreateAccount() {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
+
+      // Create a user document in Firestore
+      await setDoc(doc(db, "users", user.uid), {
+        fullName,
+        email,
+        createdAt: new Date(),
+        uid: user.uid
+      });
 
       console.log('Account created successfully:', user);
       navigate("/feed");

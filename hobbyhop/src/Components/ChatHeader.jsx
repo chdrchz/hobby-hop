@@ -1,27 +1,12 @@
-import React, { useState } from 'react';
-import ChatHeader from './ChatHeader';
-import MessageList from './MessageList';
-import MessageInput from './MessageInput';
-import '../Styles/ChatWindow.css';
+import React from 'react';
+import '../Styles/ChatHeader.css';
 
-const ChatWindow = () => {
-  const [isMinimized, setIsMinimized] = useState(false);
-
-  const toggleMinimize = () => {
-    setIsMinimized(!isMinimized);
-  };
-
+const ChatHeader = ({ userName }) => {
   return (
-    <div className={`chat-window ${isMinimized ? 'minimized' : ''}`}>
-      <ChatHeader toggleMinimize={toggleMinimize} />
-      {!isMinimized && (
-        <>
-          <MessageList />
-          <MessageInput />
-        </>
-      )}
+    <div className="chat-header">
+      <h2>{userName}</h2>
     </div>
   );
 };
 
-export default ChatWindow;
+export default ChatHeader;
