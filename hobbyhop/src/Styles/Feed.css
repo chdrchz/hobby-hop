@@ -9,7 +9,6 @@
 }
 
 .feed-container-1 {
-  display: flex;
   flex: 1;
   overflow: hidden;
   justify-content: space-between;
