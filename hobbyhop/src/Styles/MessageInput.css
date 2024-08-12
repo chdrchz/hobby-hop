@@ -1,0 +1,23 @@
+.message-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.message-input input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.message-input button {
+    padding: 10px 15px;
+    background-color: #426a5a;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}

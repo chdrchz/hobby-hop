@@ -1,0 +1,16 @@
+.message-list {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100vh - 150px); /* Adjust this value based on the header and input field height */
+}
+
+.message-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.message-list::-webkit-scrollbar-thumb {
+    background-color: #7fb685;
+    border-radius: 10px;
+}
