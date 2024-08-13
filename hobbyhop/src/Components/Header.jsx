@@ -92,7 +92,7 @@ function Header({ onUserProfileToggle }) {
         </svg>
       </div>
       <nav onClick={onUserProfileToggle}>
-       <Button color="#b8cc76">login</Button>
+       <Button color="#b8cc76">sign in</Button>
        <Button color="#b8cc76">create account</Button>
       </nav>
     </header>
