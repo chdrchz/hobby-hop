@@ -348,7 +348,7 @@ function SideNav() {
           </Button_2>
         </div>
         <div className="nav-item">
-          <Button_2 color="#b8cc76"
+          <Button_2 color="#b8cc76" isBunnyBuddiesPage={isBunnyBuddiesPage} showText={!isBunnyBuddiesPage}
             svg={
               <svg
                 className="icon"
