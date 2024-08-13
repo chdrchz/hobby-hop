@@ -126,19 +126,20 @@ const CustomFeed = () => {
   
   function getColumnsForScreenWidth() {
     const width = window.innerWidth;
-  
-    if (width >= 1650) {
-      return 7;  // Very large screens
+    if (width >= 1800) {
+      return 9;
+    } else if (width >= 1650) {
+      return 7; 
     } else if (width >= 1400) {
-      return 5;  // Large screens
+      return 5; 
     } else if (width >= 1200) {
-      return 5;  // Medium-large screens
+      return 5; 
     } else if (width >= 925) {
-      return 5;  // Medium screens
+      return 5; 
     } else if (width >= 600) {
-      return 3;  // Small-medium screens
+      return 3;
     } else {
-      return 2;  // Small screens (mobile)
+      return 2;
     }
   }
 
