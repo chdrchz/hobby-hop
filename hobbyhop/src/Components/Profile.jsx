@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
+import ProfileImageUploader from './ProfileImageUploader';
 import '../Styles/UserProfile.css';
 
-
-// This will eventually be from the database 
 function Profile() {
+    const [profileImageUrl, setProfileImageUrl] = useState('');
+
+    const handleProfileImageUpload = (imageUrl) => {
+        setProfileImageUrl(imageUrl);
+    };
+
     return (
-        <div class="profile-container">
+        <div className="profile-container">
             <div className="inner-container">
                 <div className="profile-image">
-                    
+                    {profileImageUrl ? (
+                        <img src={profileImageUrl} alt="Profile" className="uploaded-profile-image" />
+                    ) : (
+                        <p>No profile image uploaded.</p>
+                    )}
+                    <ProfileImageUploader onUpload={handleProfileImageUpload} />
                 </div>
                 <div className="profile-description">
                     <div className="profile-bio">
@@ -34,7 +44,7 @@ function Profile() {
                     <div className="interest-add">
                         <h4 className="interest-heading profile-heading">What I Like</h4>
                         <svg width="15" height="15" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_66_29)">
+                            <g clipPath="url(#clip0_66_29)">
                                 <path d="M75 32.8125H53.125C52.1875 32.8125 51.5625 32.1875 51.5625 31.25V9.375C51.5625 4.2188 47.3437 0 42.1875 0C37.0313 0 32.8125 4.2188 32.8125 9.375V31.25C32.8125 32.1875 32.1875 32.8125 31.25 32.8125H9.375C4.2188 32.8125 0 37.0313 0 42.1875C0 47.3437 4.2188 51.5625 9.375 51.5625H31.25C32.1875 51.5625 32.8125 52.1875 32.8125 53.125V75C32.8125 80.1562 37.0313 84.375 42.1875 84.375C47.3437 84.375 51.5625 80.1562 51.5625 75V53.125C51.5625 52.1875 52.1875 51.5625 53.125 51.5625H75C80.1562 51.5625 84.375 47.3437 84.375 42.1875C84.375 37.0313 80.1562 32.8125 75 32.8125Z" fill="black" />
                             </g>
                             <defs>
@@ -52,7 +62,7 @@ function Profile() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Profile;

@@ -1,101 +1,99 @@
+/* UserProfile.css */
+
 .profile-container {
     display: flex;
     flex-direction: column;
-    background-color: #FFFFFF;
-    gap: 50px;
-    height: 65vh;
-    padding: 25px;
-    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(52,9,30,1) 0%, rgba(21,27,37,1) 100%);
 }
 
-.profile-image img {
-    border-radius: 50%;
-    border: 2px solid white;
+.inner-container {
+    max-width: 800px;
+    width: 100%;
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(52,9,30,1) 0%, rgba(21,27,37,1) 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
-.profile-bio {
+.profile-image {
     display: flex;
     flex-direction: column;
-    text-align: left;
-    gap: 50px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.uploaded-profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.profile-description {
+    margin-bottom: 20px;
 }
 
 .name-and-pronouns {
     display: flex;
-    flex-direction: row;
-    gap: 15px;
-    height: auto;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
-.about-me {
-    display: flex;
-    flex-direction: column;
+.profile-heading {
+    margin: 0;
+    color: #426a5a; /* Dark green */
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(52,9,30,1) 0%, rgba(21,27,37,1) 100%);
+}
+
+.description-paragraph {
+    text-align: justify;
+    line-height: 1.6;
+    color: #333;
 }
 
 .interests {
     display: flex;
     flex-direction: column;
-    text-align: left;
-    justify-content: flex-start;
-    gap: 15px;
-}
-
-.interest-heading {
-    text-align: left;
-}
-
-.interest-list {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-}
-
-.interest-tag {
-    display: flex;
-    background-color: black;
-    height: 50px;
-    width: auto;
-    list-style: none;
     align-items: center;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 25px;
 }
 
 .interest-add {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: 15px;
+    margin-bottom: 10px;
 }
 
-.description {
+.interest-heading {
+    margin: 0 10px 0 0;
+}
+
+.interest-list {
+    list-style: none;
+    padding: 0;
     display: flex;
-    flex-direction: column;
-    gap: 25px;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.description-paragraph {
-    background-color: lightgray;
-    padding: 25px;
-    border-radius: 25px;
+.interest-tag {
+    background-color: #ddae7e; /* Beige */
+    border-radius: 4px;
+    padding: 5px 10px;
+    color: #fff;
 }
 
-.profile-heading {
-    padding-left: 10px;
-}
+@media (max-width: 600px) {
+    .inner-container {
+        padding: 10px;
+    }
 
-.interest-add svg {
-    cursor: pointer;
-}
-
-.wrapper {
-    background-color: black;
-    padding: 25px;
-}
-
-.profile-description {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    .uploaded-profile-image {
+        width: 100px;
+        height: 100px;
+    }
 }
