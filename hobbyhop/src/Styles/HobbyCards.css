@@ -1,16 +1,10 @@
 .hobby-card {
     padding: 25px;
     border-radius: 25px;
-    background-color: #e7e1da;
+    background-color: #deefb7;
     color: black;
 }
 
 .hobby-card-image {
     width: 100%;
-}
-
-@media (width: 400px) {
-    .hobby-card {
-        
-    }
 }
