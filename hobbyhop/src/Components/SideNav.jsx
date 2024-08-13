@@ -25,6 +25,10 @@ function SideNav() {
     navigate('/bunnybuddies');
   }
 
+  const handleCreateFeedClick = () => {
+    navigate('/create');
+  }
+
   // This will need to be rendered conditionally if user is logged in or not
   const handleHomeClick = () => {
     navigate('/');
@@ -148,7 +152,7 @@ function SideNav() {
           </Button_2>
         </div>
         <div className="nav-item">
-          <Button_2 isBunnyBuddiesPage={isBunnyBuddiesPage} color="#b8cc76" showText={!isBunnyBuddiesPage}
+          <Button_2 isBunnyBuddiesPage={isBunnyBuddiesPage} onClick={handleCreateFeedClick} color="#b8cc76" showText={!isBunnyBuddiesPage}
             svg={
               <svg
                 className="icon"
