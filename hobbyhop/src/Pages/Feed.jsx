@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "../Components/Header";
 import CustomFeed from "../Components/CustomFeed";
 import SideNav from "../Components/SideNav";
 import SortFeed from "../Components/SortFeed";
+import Footer from "../Components/Footer";
 import "../Styles/Feed.css";
 
 const Feed = () => {
@@ -20,6 +20,7 @@ const Feed = () => {
         </div>
         <CustomFeed />
       </div>
+      <Footer />
     </div>
   );
 };
