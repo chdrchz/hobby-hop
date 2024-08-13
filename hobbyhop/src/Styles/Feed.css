@@ -41,8 +41,13 @@
 
 /* Media queries */
 @media (max-width: 768px) {
-  /* Adjust for tablets */
+  
   .feed-container-1 {
     flex-direction: column;
+  }
+
+  .feed-header h1 {
+    text-align: center;
+    padding: 10px;
   }
 }
