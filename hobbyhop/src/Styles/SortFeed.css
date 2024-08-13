@@ -1,20 +1,32 @@
 .sort-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 400px;
-    padding-left: 25px;
-    padding-bottom: 25px;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 400px;
+  padding-left: 25px;
+  padding-bottom: 25px;
+  align-items: center;
+}
+
+.sort-buttons p {
+  margin: 0;
 }
 
 .sort-buttons a {
-    color: white;
-    text-decoration: underline;
-    padding: 5px 10px; /* Optional: Add some padding for better spacing */
+  color: white;
+  text-decoration: underline;
+  padding: 10px;
+}
+
+.sort-buttons a:hover {
+  color: #7c8a43;
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .sort-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
   }
-  
-  .sort-buttons a:hover {
-    color: #7c8a43; /* Change this to your desired hover color */
-    text-decoration: underline; /* Optional: Adds underline on hover */
-  }
+}
