@@ -7,7 +7,6 @@ import BunnyBuddies from '../Pages/BunnyBuddies';
 import Explore from '../Pages/Explore';
 import NotFound from '../Pages/NotFound';
 import UserProfile from '../Pages/UserProfile';
-import Create from '../Pages/Create';
 
 const AppRoutes = () => {
   return (
@@ -17,7 +16,6 @@ const AppRoutes = () => {
       <Route path="/bunnybuddies" element={<BunnyBuddies />} />
       <Route path="/explore" element={<Explore />} />
       <Route path="/profile" element={<UserProfile />} />
-      <Route path="/create" element={<Create />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

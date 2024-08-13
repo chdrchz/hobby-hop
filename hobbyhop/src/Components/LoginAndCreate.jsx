@@ -60,7 +60,7 @@ function LoginAndCreate() {
   return (
     <div className="form-container">
       {isCreatingAccount ? (
-        <form onSubmit={handleSubmit} method="post">
+        <form className="account-form" onSubmit={handleSubmit} method="post">
           <div className="hobbyhoplogo">
             <h1>Hop In!</h1>
             <div className="exit-create-account">
