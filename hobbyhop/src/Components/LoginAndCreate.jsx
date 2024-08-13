@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { auth, db } from '../firebase/firebase-config.js';
-import "../Styles/CreateAccount.css";
+import "../Styles/LoginAndCreate.css";
 import Button from "./Button.jsx";
 
 function LoginAndCreate() {

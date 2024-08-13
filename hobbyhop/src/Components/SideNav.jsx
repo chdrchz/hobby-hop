@@ -1,7 +1,9 @@
 import React from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
-import "../Styles/SideNav.css";
 import Button_2 from "./Button_2";
+import CustomModal from "./CustomModal";
+import CreateFeed from "./CreateFeed";
+import "../Styles/SideNav.css";
 
 function SideNav() {
   const navigate = useNavigate();
@@ -9,6 +11,18 @@ function SideNav() {
 
   const isBunnyBuddiesPage = location.pathname === '/bunnybuddies';
 
+  // set modal state and functions for create pop up 
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true); // true is open
+  }
+
+  function closeModal() {
+    setIsOpen(false); // false is close
+  }
+
+  // Handle navigation
   const handleExploreClick = () => {
     navigate('/explore');
   };
@@ -23,10 +37,6 @@ function SideNav() {
 
   const handleBuddiesClick = () => {
     navigate('/bunnybuddies');
-  }
-
-  const handleCreateFeedClick = () => {
-    navigate('/create');
   }
 
   // This will need to be rendered conditionally if user is logged in or not
@@ -152,7 +162,7 @@ function SideNav() {
           </Button_2>
         </div>
         <div className="nav-item">
-          <Button_2 isBunnyBuddiesPage={isBunnyBuddiesPage} onClick={handleCreateFeedClick} color="#b8cc76" showText={!isBunnyBuddiesPage}
+          <Button_2 isBunnyBuddiesPage={isBunnyBuddiesPage} onClick={openModal} color="#b8cc76" showText={!isBunnyBuddiesPage}
             svg={
               <svg
                 className="icon"
@@ -375,6 +385,13 @@ function SideNav() {
           </Button_2>
         </div>
       </div>
+      <CustomModal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Create Feed Content Modal"
+      >
+        <CreateFeed />
+      </CustomModal>
     </div>
   );
 }
