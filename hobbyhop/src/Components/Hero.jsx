@@ -2,7 +2,7 @@ import React from "react";
 import "../Styles/Hero.css";
 import Button from "./Button";
 import CustomModal from "./CustomModal";
-import CreateAccount from "./CreateAccount";
+import LoginAndCreate from "./LoginAndCreate";
 import VerticalCarousel from "./VerticalCarousel";
 
 const Hero = () => {
@@ -47,7 +47,7 @@ const Hero = () => {
           onRequestClose={closeModal}
           contentLabel="Create Account Modal"
         >
-          <CreateAccount />
+          <LoginAndCreate />
         </CustomModal>
       </div>
     </div>

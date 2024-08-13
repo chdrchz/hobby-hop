@@ -48,6 +48,28 @@
   justify-content: space-between;
 }
 
+.login, .signup p {
+  text-align: center;
+  margin: 0;
+}
+
+.login-button, .signup-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+.login-button:hover, .signup-button:hover {
+  color: #7c8a43;
+  text-decoration: underline;
+}
+
+.exit-login {
+  cursor: pointer;
+}
+
 form {
   position: relative; /* Ensure it’s above the pseudo-element */
   display: flex;
