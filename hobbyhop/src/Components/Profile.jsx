@@ -1,11 +1,48 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import ProfileImageUploader from './ProfileImageUploader';
 import { UserContext } from '../Contexts/UserContext';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import '../Styles/UserProfile.css';
 
 function Profile() {
-    const { user } = useContext(UserContext);  // Access the user from context
-    const [profileImageUrl, setProfileImageUrl] = useState(user?.profileImageUrl || '');
+    const { user } = useContext(UserContext);
+    console.log(user);  // Access the user from context
+    const [profileImageUrl, setProfileImageUrl] = useState('');
+    const [profileData, setProfileData] = useState({
+        fullName: '',
+        bio: '',
+        occupation: '',
+        interests: []
+    });
+
+    const db = getFirestore();
+
+    useEffect(() => {
+        const fetchUserProfile = async () => {
+            if (user && user.uid) {
+                try {
+                    const userRef = doc(db, 'users', user.uid);
+                    const userSnap = await getDoc(userRef);
+                    if (userSnap.exists()) {
+                        const userData = userSnap.data();
+                        setProfileData({
+                            fullName: userData.fullName || 'User Name',
+                            bio: userData.bio || 'No bio provided.',
+                            occupation: userData.occupation || 'Occupation',
+                            interests: userData.interests || []
+                        });
+                        setProfileImageUrl(userData.profileImageUrl || '');
+                    } else {
+                        console.log('No such document!');
+                    }
+                } catch (error) {
+                    console.error('Error fetching user profile: ', error);
+                }
+            }
+        };
+
+        fetchUserProfile();
+    }, [user, db]);
 
     const handleProfileImageUpload = (imageUrl) => {
         setProfileImageUrl(imageUrl);
@@ -26,16 +63,16 @@ function Profile() {
                     <div className="profile-bio">
                         <div className="about-me">
                             <div className="name-and-pronouns">
-                                <h3 className="profile-heading">{user?.name || 'User Name'}</h3>
+                                <h3 className="profile-heading">{profileData.fullName}</h3>
                                 <h6>{user?.pronouns || 'they/them'}</h6>
                             </div>
-                            <p className="profile-heading">{user?.occupation || 'Occupation'}</p>
+                            <p className="profile-heading">{profileData.occupation}</p>
                         </div>
                     </div>
                     <div className="description">
                         <h4 className="profile-heading">About Me</h4>
                         <p className="description-paragraph">
-                            {user?.bio || 'No bio provided.'}
+                            {profileData.bio}
                         </p>
                     </div>
                 </div>
@@ -54,8 +91,8 @@ function Profile() {
                         </svg>
                     </div>
                     <ul className="interest-list">
-                        {user?.interests?.length > 0 ? (
-                            user.interests.map((interest, index) => (
+                        {profileData.interests.length > 0 ? (
+                            profileData.interests.map((interest, index) => (
                                 <li key={index} className="interest-tag">
                                     <p>{interest}</p>
                                 </li>

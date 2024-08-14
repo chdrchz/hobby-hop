@@ -1,13 +1,24 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from 'react';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
+// Create the UserContext
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+    const [user, setUser] = useState(null);
 
-  return (
-    <UserContext.Provider value={{ user, setUser }}>
-      {children}
-    </UserContext.Provider>
-  );
+    useEffect(() => {
+        const auth = getAuth();
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+        });
+
+        return () => unsubscribe(); // Cleanup subscription on unmount
+    }, []);
+
+    return (
+        <UserContext.Provider value={{ user }}>
+            {children}
+        </UserContext.Provider>
+    );
 };
