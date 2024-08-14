@@ -100,6 +100,10 @@ form input[type="submit"] {
   padding-top: 10px;
 }
 
+.ReactModal__Content {
+  overflow: hidden;
+}
+
 @media (max-width: 600px) {
   .form-container::after {
     height: auto;
