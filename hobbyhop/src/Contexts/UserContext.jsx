@@ -1,7 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
-// Create the UserContext
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
@@ -17,7 +16,7 @@ export const UserProvider = ({ children }) => {
     }, []);
 
     return (
-        <UserContext.Provider value={{ user }}>
+        <UserContext.Provider value={{ user, setUser }}>
             {children}
         </UserContext.Provider>
     );

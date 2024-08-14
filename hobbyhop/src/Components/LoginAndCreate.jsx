@@ -11,56 +11,56 @@ function LoginAndCreate() {
   const navigate = useNavigate();
   const { setUser } = useContext(UserContext);
 
-  const handleSubmit = async (event) => {
+  const handleCreateAccount = async (event) => {
     event.preventDefault();
   
     const email = event.target.email.value;
     const password = event.target.password.value;
-    
-    if (isCreatingAccount) {
-      const fullName = event.target.fullname?.value; // Only access fullName if creating an account
-      const confirmPassword = event.target["confirm-password"]?.value; // Same for confirmPassword
+    const fullName = event.target.fullname.value;
+    const confirmPassword = event.target["confirm-password"].value;
   
-      if (password !== confirmPassword) {
-        alert("Passwords do not match");
-        return;
-      }
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
   
-      try {
-        // Create a new user
-        const userCredential = await createUserWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
-        const user = userCredential.user;
+    try {
+      // Create a new user
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
   
-        // Create a user document in Firestore
-        await setDoc(doc(db, "users", user.uid), {
-          fullName,
-          email,
-          createdAt: new Date(),
-          uid: user.uid,
-        });
+      // Create a user document in Firestore
+      await setDoc(doc(db, "users", user.uid), {
+        fullName,
+        email,
+        createdAt: new Date(),
+        uid: user.uid,
+      });
   
-        console.log("Account created successfully:", user);
-        navigate("/feed"); // Redirect after account creation
-      } catch (error) {
-        console.error("Error:", error.message);
-        alert(error.message);
-      }
-    } else {
-      try {
-        // Login existing user
-        const userCredential = await signInWithEmailAndPassword(auth, email, password); // Correct Firebase method
-        const user = userCredential.user;
-        console.log("User logged in successfully:", user);
-        setUser(user);
-        navigate("/feed"); // Redirect after login
-      } catch (error) {
-        console.error("Error:", error.message);
-        alert(error.message);
-      }
+      console.log("Account created successfully:", user);
+      navigate("/feed"); // Redirect after account creation
+    } catch (error) {
+      console.error("Error:", error.message);
+      alert(error.message);
+    }
+  };
+  
+  const handleLogin = async (event) => {
+    event.preventDefault();
+  
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+  
+    try {
+      // Login existing user
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      console.log("User logged in successfully:", user);
+      setUser(user);
+      navigate("/feed"); // Redirect after login
+    } catch (error) {
+      console.error("Error:", error.message);
+      alert(error.message);
     }
   };
 
@@ -98,7 +98,7 @@ function LoginAndCreate() {
   return (
     <div className="form-container">
       {isCreatingAccount ? (
-        <form className="account-form" onSubmit={handleSubmit} method="post">
+        <form className="account-form" onSubmit={handleCreateAccount} method="post">
           <div className="hobbyhoplogo">
             <h1>Hop In!</h1>
             <div className="exit-create-account">
@@ -184,7 +184,7 @@ function LoginAndCreate() {
           </div>
         </form>
       ) : (
-        <form onSubmit={handleSubmit} method="post">
+        <form onSubmit={handleLogin} method="post">
           <div className="hobbyhoplogo">
             <h1>Welcome Back!</h1>
             <div className="exit-login">
