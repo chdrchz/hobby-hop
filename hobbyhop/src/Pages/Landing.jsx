@@ -8,7 +8,6 @@ const Landing = () => {
 
   return (
     <div className='landing'>
-      <Header />
       <div className='hero-container'>
         <Hero />
       </div>

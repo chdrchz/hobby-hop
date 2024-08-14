@@ -10,6 +10,7 @@
 .hero-container {
     padding-left: 150px;
     padding-right: 150px;
+    padding-top: 175px;
 }
 
 @media (min-width: 769px) and (max-width: 1200px) {
