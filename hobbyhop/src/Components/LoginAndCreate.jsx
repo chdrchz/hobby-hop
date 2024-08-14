@@ -1,48 +1,66 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"; // Import both methods
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../firebase/firebase-config.js";
+import { UserContext } from "../Contexts/UserContext";
 import "../Styles/LoginAndCreate.css";
 import Button from "./Button.jsx";
 
 function LoginAndCreate() {
   const navigate = useNavigate();
+  const { setUser } = useContext(UserContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    const fullName = event.target.fullname.value;
+  
     const email = event.target.email.value;
     const password = event.target.password.value;
-    const confirmPassword = event.target["confirm-password"].value;
-
-    if (password !== confirmPassword) {
-      alert("Passwords do not match");
-      return;
-    }
-
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      const user = userCredential.user;
-
-      // Create a user document in Firestore
-      await setDoc(doc(db, "users", user.uid), {
-        fullName,
-        email,
-        createdAt: new Date(),
-        uid: user.uid,
-      });
-
-      console.log("Account created successfully:", user);
-      navigate("/feed");
-    } catch (error) {
-      console.error("Error creating account:", error.message);
-      alert(error.message);
+    
+    if (isCreatingAccount) {
+      const fullName = event.target.fullname?.value; // Only access fullName if creating an account
+      const confirmPassword = event.target["confirm-password"]?.value; // Same for confirmPassword
+  
+      if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return;
+      }
+  
+      try {
+        // Create a new user
+        const userCredential = await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+        const user = userCredential.user;
+  
+        // Create a user document in Firestore
+        await setDoc(doc(db, "users", user.uid), {
+          fullName,
+          email,
+          createdAt: new Date(),
+          uid: user.uid,
+        });
+  
+        console.log("Account created successfully:", user);
+        navigate("/feed"); // Redirect after account creation
+      } catch (error) {
+        console.error("Error:", error.message);
+        alert(error.message);
+      }
+    } else {
+      try {
+        // Login existing user
+        const userCredential = await signInWithEmailAndPassword(auth, email, password); // Correct Firebase method
+        const user = userCredential.user;
+        console.log("User logged in successfully:", user);
+        setUser(user);
+        navigate("/feed"); // Redirect after login
+      } catch (error) {
+        console.error("Error:", error.message);
+        alert(error.message);
+      }
     }
   };
 
@@ -67,7 +85,7 @@ function LoginAndCreate() {
     setPassword("");
     setConfirmPassword("");
   };
-  
+
   const handleCreateAccountClick = () => {
     setIsCreatingAccount(true);
     // Clear form fields (optional, since these fields wouldn't be populated in Sign In)
@@ -199,6 +217,8 @@ function LoginAndCreate() {
             placeholder="Email"
             name="email"
             required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <label htmlFor="password"></label>
@@ -208,16 +228,18 @@ function LoginAndCreate() {
             placeholder="Password"
             name="password"
             required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
 
           <div className="submit">
-            <Button color="#b8cc76">log in</Button>
+            <Button color="#b8cc76">sign in</Button>
           </div>
-          <div className="signup">
+          <div className="create-account">
             <p>
-              Don't have an account?{" "}
+              don't have an account?{" "}
               <button
-                className="signup-button"
+                className="login-button"
                 type="button"
                 onClick={handleCreateAccountClick}
               >

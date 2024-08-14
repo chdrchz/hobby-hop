@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ProfileImageUploader from './ProfileImageUploader';
+import { UserContext } from '../Contexts/UserContext';
 import '../Styles/UserProfile.css';
 
 function Profile() {
-    const [profileImageUrl, setProfileImageUrl] = useState('');
+    const { user } = useContext(UserContext);  // Access the user from context
+    const [profileImageUrl, setProfileImageUrl] = useState(user?.profileImageUrl || '');
 
     const handleProfileImageUpload = (imageUrl) => {
         setProfileImageUrl(imageUrl);
@@ -24,19 +26,16 @@ function Profile() {
                     <div className="profile-bio">
                         <div className="about-me">
                             <div className="name-and-pronouns">
-                                <h3 className="profile-heading">Savanna Davis</h3>
-                                <h6>she/her</h6>
+                                <h3 className="profile-heading">{user?.name || 'User Name'}</h3>
+                                <h6>{user?.pronouns || 'they/them'}</h6>
                             </div>
-                            <p className="profile-heading">Software Developer</p>
+                            <p className="profile-heading">{user?.occupation || 'Occupation'}</p>
                         </div>
                     </div>
                     <div className="description">
                         <h4 className="profile-heading">About Me</h4>
-                        <p className="description-paragraph"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <p className="description-paragraph">
+                            {user?.bio || 'No bio provided.'}
                         </p>
                     </div>
                 </div>
@@ -55,9 +54,15 @@ function Profile() {
                         </svg>
                     </div>
                     <ul className="interest-list">
-                        <li className="interest-tag"><p>Rollerskating</p></li>
-                        <li className="interest-tag"><p>Video Gaming</p></li>
-                        <li className="interest-tag"><p>Reading</p></li>
+                        {user?.interests?.length > 0 ? (
+                            user.interests.map((interest, index) => (
+                                <li key={index} className="interest-tag">
+                                    <p>{interest}</p>
+                                </li>
+                            ))
+                        ) : (
+                            <li>No interests listed.</li>
+                        )}
                     </ul>
                 </div>
             </div>
