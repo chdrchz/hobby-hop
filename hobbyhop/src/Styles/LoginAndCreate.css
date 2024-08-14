@@ -31,8 +31,9 @@
 .exit-create-account {
   display: flex;
   flex-direction: row;
-  justify-content: end;
+  justify-content: space-between;
   cursor: pointer;
+  align-items: center;
 }
 
 .submit {
