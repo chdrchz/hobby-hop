@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { doc, setDoc } from 'firebase/firestore';
-import { auth, db } from '../firebase/firebase-config.js';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+import { auth, db } from "../firebase/firebase-config.js";
 import "../Styles/LoginAndCreate.css";
 import Button from "./Button.jsx";
 
@@ -11,11 +11,11 @@ function LoginAndCreate() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
+
     const fullName = event.target.fullname.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
-    const confirmPassword = event.target['confirm-password'].value;
+    const confirmPassword = event.target["confirm-password"].value;
 
     if (password !== confirmPassword) {
       alert("Passwords do not match");
@@ -23,7 +23,11 @@ function LoginAndCreate() {
     }
 
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       const user = userCredential.user;
 
       // Create a user document in Firestore
@@ -31,13 +35,13 @@ function LoginAndCreate() {
         fullName,
         email,
         createdAt: new Date(),
-        uid: user.uid
+        uid: user.uid,
       });
 
-      console.log('Account created successfully:', user);
+      console.log("Account created successfully:", user);
       navigate("/feed");
     } catch (error) {
-      console.error('Error creating account:', error.message);
+      console.error("Error creating account:", error.message);
       alert(error.message);
     }
   };
@@ -46,15 +50,31 @@ function LoginAndCreate() {
     window.location.reload(); // Reload the page
   };
 
+  // State management for form field clearing
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
   // state management for login/create account rendering
   const [isCreatingAccount, setIsCreatingAccount] = useState(true);
 
   const handleSignInClick = () => {
     setIsCreatingAccount(false);
+    // Clear form fields
+    setFullName("");
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
   };
-
+  
   const handleCreateAccountClick = () => {
     setIsCreatingAccount(true);
+    // Clear form fields (optional, since these fields wouldn't be populated in Sign In)
+    setFullName("");
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
   };
 
   return (
@@ -93,6 +113,8 @@ function LoginAndCreate() {
             placeholder="Full Name"
             name="fullname"
             required
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
           />
 
           <label htmlFor="email"></label>
@@ -102,6 +124,8 @@ function LoginAndCreate() {
             placeholder="Email"
             name="email"
             required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <label htmlFor="password"></label>
@@ -111,6 +135,8 @@ function LoginAndCreate() {
             placeholder="Password"
             name="password"
             required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
 
           <label htmlFor="confirm-password"></label>
@@ -120,6 +146,8 @@ function LoginAndCreate() {
             placeholder="Confirm Password"
             name="confirm-password"
             required
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
           />
           <div className="submit">
             <Button color="#b8cc76">create account</Button>
@@ -142,7 +170,7 @@ function LoginAndCreate() {
           <div className="hobbyhoplogo">
             <h1>Welcome Back!</h1>
             <div className="exit-login">
-            <svg
+              <svg
                 onClick={handleExit}
                 width="25"
                 height="25"
