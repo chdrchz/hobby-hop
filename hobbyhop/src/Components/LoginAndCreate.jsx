@@ -43,7 +43,7 @@ function LoginAndCreate() {
   };
 
   const handleExit = () => {
-    navigate(-1); // Reload the page
+    window.location.reload(); // Reload the page
   };
 
   // state management for login/create account rendering
