@@ -44,40 +44,29 @@ function CreateFeed() {
                 </svg>
               </div>
             </div>
-            <div className="button-group">
-              <Button
-                onClick={() => handleTypeChange("post")}
-                color="#b8cc76"
-                className="select-button"
-              >
-                post
-              </Button>
-              <Button
-                onClick={() => handleTypeChange("event")}
-                color="#b8cc76"
-                className="select-button"
-              >
-                class | event
-              </Button>
-            </div>
+            {/* Conditionally render the button group */}
+            {type === null && (
+              <div className="button-group">
+                <Button
+                  onClick={() => handleTypeChange("post")}
+                  color="#b8cc76"
+                  className="select-button"
+                >
+                  post
+                </Button>
+                <Button
+                  onClick={() => handleTypeChange("event")}
+                  color="#b8cc76"
+                  className="select-button"
+                >
+                  class | event
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       ) : (
         <div>
-          <div className="button-group">
-            <button
-              onClick={() => handleTypeChange("post")}
-              className={type === "post" ? "active" : ""}
-            >
-              Create Post
-            </button>
-            <button
-              onClick={() => handleTypeChange("event")}
-              className={type === "event" ? "active" : ""}
-            >
-              Create Event
-            </button>
-          </div>
           <CreateFeedForm type={type} />
         </div>
       )}
