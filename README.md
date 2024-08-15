@@ -1,9 +1,8 @@
-
 # Hobby Hop
 
-![Hobby Hop ]
+![Hobby Hop Logo](path_to_your_vector_logo) <!-- Replace with the actual path to your vector logo -->
 
-Welcome to **Hobby Hop**—a social media platform designed to help people find their passions and jump into their hobbies while connecting with friends and community through swipe matching, user events, and classes.
+Welcome to **Hobby Hop**—a social media platform designed to help people find their passions and hobbies while connecting with friends and community through swipe matching, user events, and classes.
 
 ## About
 
@@ -22,31 +21,3 @@ To get started with Hobby Hop, follow these steps:
 1. Clone the repository:
    ```bash
    git clone https://github.com/chdrchz/hobby-hop.git
-Navigate into the project directory:
-
-bash
-
-cd hobbyhop
-Install dependencies:
-
-bash
-
-npm install
-Run the development server:
-
-bash
-npm run dev
-Authors
-Savanna Davis
-Frank Blation
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-For more information, visit our GitHub repository.
-
-javascript
-
-
-
-
-
