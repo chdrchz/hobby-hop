@@ -4,6 +4,13 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+}
+
 .form-group {
   width: 100%;
 }
@@ -45,4 +52,22 @@
 .form-group textarea {
   resize: vertical;
   min-height: 100px;
+}
+
+@media (max-width: 600px) {
+  .create-form {
+    width: 100%;
+    max-width: 100%; /* Ensures it takes up full width */
+    margin: 0 auto; /* Centers the form */
+    padding: 15px;
+    box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+  }
+}
+
+@media (max-width: 480px) {
+  .create-form {
+    padding: 10px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
