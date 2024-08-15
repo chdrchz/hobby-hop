@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import Button from "./Button";
 import { UserContext } from "../Contexts/UserContext";
 import { getFirestore, doc, updateDoc } from "firebase/firestore";
+import "../Styles/ProfileForm.css";
 
 function ProfileForm({ existingProfileData, handleClose }) {
   const { user } = useContext(UserContext);
@@ -99,7 +100,7 @@ function ProfileForm({ existingProfileData, handleClose }) {
         </div>
 
         <div className="form-buttons">
-          <Button color="#b8cc76" type="submit">Save Changes</Button>
+          <Button color="#b8cc76" type="submit">Save</Button>
           <Button color="#b8cc76" type="button" onClick={handleClose}>
             Cancel
           </Button>
