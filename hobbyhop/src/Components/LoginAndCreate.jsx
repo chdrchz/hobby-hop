@@ -128,7 +128,7 @@ function LoginAndCreate() {
           <input
             type="text"
             id="fullname"
-            placeholder="Full Name"
+            placeholder="First and Last Name"
             name="fullname"
             required
             value={fullName}
@@ -139,7 +139,7 @@ function LoginAndCreate() {
           <input
             type="email"
             id="email"
-            placeholder="Email"
+            placeholder="email@example.com"
             name="email"
             required
             value={email}
@@ -150,7 +150,7 @@ function LoginAndCreate() {
           <input
             type="password"
             id="password"
-            placeholder="Password"
+            placeholder="At least 6 digits"
             name="password"
             required
             value={password}
@@ -214,7 +214,7 @@ function LoginAndCreate() {
           <input
             type="email"
             id="email"
-            placeholder="Email"
+            placeholder="email@example.com"
             name="email"
             required
             value={email}

@@ -60,6 +60,7 @@ function ProfileForm({ existingProfileData, handleClose }) {
             name="fullName"
             value={formData.fullName}
             onChange={handleInputChange}
+            placeholder="Enter your full name"
             required
           />
         </div>
@@ -72,6 +73,7 @@ function ProfileForm({ existingProfileData, handleClose }) {
             name="occupation"
             value={formData.occupation}
             onChange={handleInputChange}
+            placeholder="Enter your occupation"
             required
           />
         </div>
@@ -84,18 +86,20 @@ function ProfileForm({ existingProfileData, handleClose }) {
             value={formData.bio}
             onChange={handleInputChange}
             rows="4"
+            placeholder="Write a short bio"
             required
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="interests">Interests(comma-separated)</label>
+          <label htmlFor="interests">Interests (comma-separated)</label>
           <input
             type="text"
             id="interests"
             name="interests"
             value={formData.interests}
             onChange={handleInputChange}
+            placeholder="e.g., Hiking, Reading, Coding"
           />
         </div>
 

@@ -58,6 +58,7 @@ function CreateFeedForm({ type }) {
           <input
             type="text"
             name="image"
+            placeholder="image-url"
             value={formData.image}
             onChange={handleChange}
           />
@@ -68,6 +69,7 @@ function CreateFeedForm({ type }) {
             name="description"
             value={formData.description}
             onChange={handleChange}
+            placeholder="Enter description"
           />
         </div>
         {type === "event" && (
@@ -77,6 +79,7 @@ function CreateFeedForm({ type }) {
               <input
                 type="text"
                 name="time"
+                placeholder="00:00 CDT"
                 value={formData.time}
                 onChange={handleChange}
               />
@@ -86,6 +89,7 @@ function CreateFeedForm({ type }) {
               <input
                 type="date"
                 name="date"
+                placeholder="DD/MM/YY"
                 value={formData.date}
                 onChange={handleChange}
               />
@@ -95,6 +99,7 @@ function CreateFeedForm({ type }) {
               <input
                 type="text"
                 name="location"
+                placeholder="Enter location"
                 value={formData.location}
                 onChange={handleChange}
               />
@@ -104,6 +109,7 @@ function CreateFeedForm({ type }) {
               <input
                 type="text"
                 name="hostedBy"
+                placeholder="Who's hosting?"
                 value={formData.hostedBy}
                 onChange={handleChange}
               />
