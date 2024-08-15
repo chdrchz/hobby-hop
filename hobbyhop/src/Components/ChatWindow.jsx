@@ -9,12 +9,11 @@ import '../Styles/ChatWindow.css';
 const ChatWindow = () => {
     const [messages, setMessages] = useState([]);
     const [userName, setUserName] = useState("");
+    const [isMinimized, setIsMinimized] = useState(false); // Add state for minimization
 
     useEffect(() => {
-        // Define and set up the Firestore listener
         const q = query(collection(db, "messages"), orderBy("timestamp"));
 
-        // Create an unsubscribe function
         const unsubscribe = onSnapshot(q, (snapshot) => {
             const messages = snapshot.docs.map(doc => ({
                 id: doc.id,
@@ -23,13 +22,11 @@ const ChatWindow = () => {
             setMessages(messages);
         });
 
-        // Set the userName
         const user = auth.currentUser;
         if (user) {
             setUserName(user.displayName || user.email);
         }
 
-        // Cleanup function to unsubscribe from Firestore listener
         return () => unsubscribe();
 
     }, []);
@@ -46,11 +43,18 @@ const ChatWindow = () => {
         }
     };
 
+    const toggleMinimize = () => {
+        setIsMinimized(!isMinimized); 
+    };
+
     return (
-        <div className="chat-window">
-            <ChatHeader userName={userName} />
+        <div className={`chat-window ${isMinimized ? 'minimized' : ''}`}>
+            {!isMinimized && <ChatHeader userName={userName} />}
             <MessageList messages={messages} />
-            <MessageInput onSendMessage={handleSendMessage} />
+            {!isMinimized && <MessageInput onSendMessage={handleSendMessage} />}
+            <button className="minimize-button" onClick={toggleMinimize}>
+                {isMinimized ? 'Expand' : 'Minimize'}
+            </button>
         </div>
     );
 };

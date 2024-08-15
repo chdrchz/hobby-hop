@@ -1,44 +1,43 @@
 .chat-window {
-    display: flex;
-    flex-direction: column;
-    height: 90vh;
-    background-color: #f1f1f1;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: height 0.3s ease;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.message-list {
-    flex-grow: 1;
-    padding: 20px;
-    overflow-y: auto;
+.chat-window.minimized {
+    height: 15px; 
+    width: 30px; 
+    background-color: pink; 
 }
 
-.message-input {
-    padding: 15px;
-    border-top: 1px solid #ddd;
-    background-color: white;
-    display: flex;
-}
-
-.message-input input {
-    flex-grow: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.message-input button {
-    padding: 10px;
-    border: none;
-    background-color: #426a5a;
+.chat-window .minimize-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #ef6f6c; /* Adjust as needed */
     color: white;
+    border: none;
     border-radius: 5px;
+    padding: 5px 10px;
     cursor: pointer;
+    z-index: 1; /* Ensure button is above other content */
 }
 
-.message-input button:hover {
-    background-color: #354b45;
+/* Optional: Style for expanded state */
+.chat-window > * {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.chat-window.minimized > * {
+    opacity: 0; /* Hide content when minimized */
+
+}
+
+/* Show content inside chat window when expanded */
+.chat-window:not(.minimized) > * {
+    opacity: 1;
 }
