@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect } from "react";
-import ProfileImageUploader from './ProfileImageUploader';
 import { UserContext } from '../Contexts/UserContext';
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import '../Styles/UserProfile.css';
@@ -52,12 +51,9 @@ function Profile() {
         <div className="profile-container">
             <div className="inner-container">
                 <div className="profile-image">
-                    {profileImageUrl ? (
-                        <img src={profileImageUrl} alt="Profile" className="uploaded-profile-image" />
-                    ) : (
-                        <p>No profile image uploaded.</p>
-                    )}
-                    <ProfileImageUploader onUpload={handleProfileImageUpload} />
+                    <div>
+                        <p>img here</p>
+                    </div>
                 </div>
                 <div className="profile-description">
                     <div className="profile-bio">
