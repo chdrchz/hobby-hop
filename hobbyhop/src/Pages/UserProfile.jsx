@@ -7,7 +7,7 @@ import "../Styles/UserProfile.css";
 const UserProfile = () => {
   return (
     <div className="profile-container">
-      <div>
+      <div className="side-nav-container">
         <SideNav />
       </div>
         <Profile />
