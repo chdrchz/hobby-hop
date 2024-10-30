@@ -1,0 +1,11 @@
+.post-card {
+    padding: 25px;
+    border-radius: 25px;
+    background-color: #c8dd96;
+    color: black;
+    width: auto;
+}
+
+.post-card-image {
+    width: 100%;
+}

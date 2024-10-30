@@ -7,11 +7,17 @@ header {
     padding-left: 100px;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: lightgray;
-    border-bottom: 2px solid gray;
 }
 
-.logo {
-    font-weight: bold;
-    font-size: 1.8rem;
+.hobbyhoplogo1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
 }

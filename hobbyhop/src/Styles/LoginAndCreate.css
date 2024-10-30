@@ -1,0 +1,130 @@
+.form-container {
+  position: relative; /* Ensure pseudo-element is positioned correctly */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Add a pseudo-element for the background blur */
+.form-container::before {
+  content: '';
+  position: fixed; /* Fixed position to cover entire viewport */
+  width: 100vw;
+  height: 100vh;
+  background: hsla(0, 0%, 100%, 0.3); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  z-index: -1; /* Ensure blur is behind the content */
+}
+
+.form-container h1 {
+  color: white;
+}
+
+.exit-create-account {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: center;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 25px;
+}
+
+.hobbyhoplogo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login, .signup p {
+  text-align: center;
+  margin: 0;
+}
+
+.login-button, .signup-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+.login-button:hover, .signup-button:hover {
+  color: #7c8a43;
+  text-decoration: underline;
+}
+
+.exit-login {
+  cursor: pointer;
+}
+
+form {
+  position: relative; /* Ensure it’s above the pseudo-element */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 90%; /* Constrain form width */
+  max-width: 400px; /* Ensure the form doesn't grow too large */
+  background: radial-gradient(circle at 25px 50px, rgba(2,0,36,1) 0%, rgba(52,9,30,1) 0%, rgba(21,27,37,1) 100%); /* Slightly opaque background for form */
+  padding: 50px;
+  border-radius: 25px;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  height: 20px;
+  border: none;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  /* Solid background for input fields */
+}
+
+form input[type="submit"] {
+  border: none;
+  border-radius: 25px;
+  padding-top: 10px;
+}
+
+.ReactModal__Content {
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .form-container::after {
+    height: auto;
+    width: 300px;
+    padding: 0 20px; /* Add padding for small screens */
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .hobbyhoplogo {
+    width: 100%;
+    margin-bottom: -15px;
+  }
+
+  .form-container::before {
+    position: fixed; /* Fixed position to ensure it covers the entire screen */
+    width: 100vw;
+    height: 100vh;
+    background: hsla(0, 0%, 100%, 0.3); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    z-index: -1; /* Ensure blur is behind the content */
+  }
+}

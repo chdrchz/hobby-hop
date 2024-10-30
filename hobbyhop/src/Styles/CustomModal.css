@@ -1,0 +1,11 @@
+.modal-close-button {
+    display: none;
+}
+
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+    background: none !important;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open {
+    overflow: hidden !important;
+}

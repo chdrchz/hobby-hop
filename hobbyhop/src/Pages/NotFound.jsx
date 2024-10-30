@@ -1,5 +1,6 @@
 // pages/NotFound.jsx
 import React from 'react';
+import '../Styles/NotFound.css';
 
 const NotFound = () => {
   return (

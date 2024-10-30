@@ -1,0 +1,52 @@
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.carousel-container h1 {
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.carousel-container span {
+    font-weight: 500;
+}
+
+.word-container {
+    position: relative;
+    height: auto; 
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.word {
+    animation: slide 3s ease infinite;
+    font-size: 3rem; 
+    color: #cc9ab5;
+    letter-spacing: 3px;
+    font-weight: 300;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    10% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    90% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}

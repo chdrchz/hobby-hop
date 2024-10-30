@@ -1,0 +1,25 @@
+.feed-container1 {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  width: auto;
+  margin-right: 25px;
+  margin-left: 25px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sort-posts {
+  padding: 100px;
+}
+
+@media (max-width: 400px) {
+  .feed-container1 {
+    width: auto;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,11 @@
+.hobby-card {
+    padding: 25px;
+    border-radius: 25px;
+    background-color: #deefb7;
+    color: black;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+  }
