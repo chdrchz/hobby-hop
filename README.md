@@ -26,3 +26,9 @@ To get started with Hobby Hop, follow these steps:
 1. Clone the repository:
    ```bash
    git clone https://github.com/chdrchz/hobby-hop.git
+2. Install dependencies:
+   ```bash
+   npm install
+3. Run a local instance of the app:
+   ```bash
+   npm run dev
