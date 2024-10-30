@@ -1,6 +1,6 @@
 # Hobby Hop
 
-![Hobby Hop Logo](hobbyhop/src/assets/HobbyHopRework.svg) <!-- Replace with the actual path to your vector logo -->
+![Hobby Hop Logo](/hobbyhop/src/assets/HobbyHopRework.svg) <!-- Replace with the actual path to your vector logo -->
 
 Welcome to **Hobby Hop**—a social media platform designed to help people find their passions and hobbies while connecting with friends and community through swipe matching, user events, and classes.
 
