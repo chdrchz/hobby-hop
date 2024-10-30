@@ -17,6 +17,8 @@ Hobby Hop is built using the FERN Stack, offering a dynamic way to explore and c
 - **User Events:** Discover and join events related to your favorite activities.
 - **Classes:** Explore classes to learn new skills and meet people with similar interests.
 
+Visit https://hobbyhop-fa22a.web.app/ to see it in action!
+
 ## Installation
 
 To get started with Hobby Hop, follow these steps:
