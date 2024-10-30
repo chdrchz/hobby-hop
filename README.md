@@ -16,7 +16,7 @@ Hobby Hop is built using the FERN Stack, offering a dynamic way to explore and c
    - geo location tracking
    - a functional user swipe system
    - a customized algorithim for personal feed
-   But honestly, we are open to adding anything that wil make a tangible impact on people's abaility to create meaningful connections. 
+3. But honestly, we are open to adding anything that wil make a tangible impact on people's abaility to create meaningful connections. 
 
 ## Features
 
